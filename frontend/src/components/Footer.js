@@ -39,7 +39,7 @@ const Footer = () => {
             <div className="flex items-center gap-2 mb-4">
               <Wine className="h-8 w-8 text-amber-400" strokeWidth={2.5} />
               <div>
-                <h3 className="text-2xl font-bold">We Love Portugal</h3>
+                <h3 className="text-2xl font-bold">EuroWineExperience</h3>
               </div>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
