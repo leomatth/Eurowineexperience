@@ -114,11 +114,11 @@ const AboutSection = () => {
           <div className="mt-20 text-center">
             <p className="text-gray-600 mb-8 text-lg font-medium">Nossos Parceiros de Confiança</p>
             <div className="flex flex-wrap justify-center gap-8 items-center opacity-60">
-              <div className="text-2xl font-bold text-gray-400">AdegaMãe</div>
-              <div className="text-2xl font-bold text-gray-400">Quinta da Bacalhôa</div>
               <div className="text-2xl font-bold text-gray-400">Quinta das Murgas</div>
-              <div className="text-2xl font-bold text-gray-400">Bestours PT</div>
-              <div className="text-2xl font-bold text-gray-400">Lisbon Airport Transfers</div>
+              <div className="text-2xl font-bold text-gray-400">Quinta da Bacalhôa</div>
+              <div className="text-2xl font-bold text-gray-400">AdegaMãe</div>
+              <div className="text-2xl font-bold text-gray-400">Sogrape</div>
+              <div className="text-2xl font-bold text-gray-400">VinoTours</div>
             </div>
           </div>
         </div>
