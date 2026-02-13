@@ -186,7 +186,7 @@ export const translations = {
       subtitle: 'Everything you need to know'
     },
     footer: {
-      tagline: 'Luxury Wine Tourism in Portugal',
+      tagline: 'Premium Wine Tourism in Portugal',
       quickLinks: 'Quick Links',
       contact: 'Contact',
       follow: 'Follow Us',
@@ -194,7 +194,8 @@ export const translations = {
       newsletterText: 'Receive exclusive offers and news',
       emailPlaceholder: 'Your email',
       subscribe: 'Subscribe',
-      rights: 'All rights reserved.'
+      rights: 'All rights reserved.',
+      downloadSource: 'Source code'
     },
     booking: {
       title: 'Book',
