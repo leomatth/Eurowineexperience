@@ -82,12 +82,12 @@ const HeroSection = () => {
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mt-20 max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2">3</div>
-              <div className="text-white/80 text-sm md:text-base">Vinícolas Premium</div>
+              <div className="text-4xl md:text-5xl font-bold text-white mb-2">8+</div>
+              <div className="text-white/80 text-sm md:text-base">Experiências Premium</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2">5+</div>
-              <div className="text-white/80 text-sm md:text-base">Anos de Experiência</div>
+              <div className="text-4xl md:text-5xl font-bold text-white mb-2">6</div>
+              <div className="text-white/80 text-sm md:text-base">Hotéis Selecionados</div>
             </div>
             <div className="text-center col-span-2 md:col-span-1">
               <div className="text-4xl md:text-5xl font-bold text-white mb-2">100%</div>
