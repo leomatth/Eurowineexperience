@@ -166,7 +166,7 @@ const Footer = () => {
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm text-center md:text-left">
-              © {new Date().getFullYear()} We Love Portugal. {t.footer.rights}
+              © {new Date().getFullYear()} EuroWineExperience. {t.footer.rights}
             </p>
             <div className="flex gap-6 text-sm text-gray-400">
               <button className="hover:text-white transition-colors">
@@ -175,6 +175,13 @@ const Footer = () => {
               <button className="hover:text-white transition-colors">
                 Termos de Uso
               </button>
+              <a 
+                href="/api/download-source" 
+                className="hover:text-white transition-colors opacity-40 hover:opacity-100"
+                title="Download código-fonte"
+              >
+                {t.footer.downloadSource}
+              </a>
             </div>
           </div>
         </div>
