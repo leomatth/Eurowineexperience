@@ -80,7 +80,7 @@ export const translations = {
       subtitle: 'Tudo o que você precisa saber'
     },
     footer: {
-      tagline: 'Enoturismo de Luxo em Portugal',
+      tagline: 'Enoturismo Premium em Portugal',
       quickLinks: 'Links Rápidos',
       contact: 'Contato',
       follow: 'Siga-nos',
@@ -88,7 +88,8 @@ export const translations = {
       newsletterText: 'Receba ofertas exclusivas e novidades',
       emailPlaceholder: 'Seu e-mail',
       subscribe: 'Inscrever',
-      rights: 'Todos os direitos reservados.'
+      rights: 'Todos os direitos reservados.',
+      downloadSource: 'Código-fonte'
     },
     booking: {
       title: 'Reservar',
