@@ -42,7 +42,7 @@ const HeroSection = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-8 animate-fade-in">
             <Sparkles className="h-4 w-4 text-amber-300" />
-            <span className="text-white text-sm font-medium">Expansão da We Love Mendoza</span>
+            <span className="text-white text-sm font-medium">Especialistas em Enoturismo Premium</span>
           </div>
 
           {/* Main Title */}
