@@ -15,16 +15,34 @@ export const translations = {
       ctaSecondary: 'Fale no WhatsApp'
     },
     packages: {
-      title: 'Nossos Pacotes Exclusivos',
-      subtitle: 'Experiências únicas em vinícolas portuguesas premiadas',
+      title: 'Nossas Experiências Premium',
+      subtitle: 'Vinícolas, tours guiados, city tours e passeios culturais',
       from: 'A partir de',
       perPerson: '/pessoa',
+      perNight: '/noite',
       viewDetails: 'Ver Detalhes',
-      reserve: 'Reservar Pacote',
+      reserve: 'Reservar',
       duration: 'Duração',
       groupSize: 'Tamanho do Grupo',
       includes: 'O que inclui',
-      options: 'Opções de Degustação'
+      options: 'Opções',
+      filterAll: 'Todas',
+      filterWinery: 'Vinícolas',
+      filterTours: 'Tours',
+      filterCityTour: 'City Tours',
+      filterDayTrip: 'Passeios de 1 Dia'
+    },
+    accommodations: {
+      title: 'Hospedagens Selecionadas em Lisboa',
+      subtitle: 'Hotéis boutique e de luxo no centro histórico',
+      perNight: '/noite',
+      viewDetails: 'Ver Hotel',
+      bookNow: 'Reservar Hospedagem',
+      amenities: 'Comodidades',
+      rating: 'Avaliação',
+      distanceCenter: 'Distância do Centro',
+      distanceAirport: 'Distância do Aeroporto',
+      stars: 'estrelas'
     },
     about: {
       title: 'Sobre Nós',
