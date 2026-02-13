@@ -109,6 +109,9 @@ const Header = () => {
               <button onClick={() => scrollToSection('packages')} className="text-left text-gray-700 hover:text-red-700 transition-colors font-medium">
                 {t.nav.packages}
               </button>
+              <button onClick={() => scrollToSection('accommodations')} className="text-left text-gray-700 hover:text-red-700 transition-colors font-medium">
+                {t.nav.accommodations}
+              </button>
               <button onClick={() => scrollToSection('about')} className="text-left text-gray-700 hover:text-red-700 transition-colors font-medium">
                 {t.nav.about}
               </button>
