@@ -214,28 +214,47 @@ export const translations = {
   es: {
     nav: {
       home: 'Inicio',
-      packages: 'Paquetes',
+      packages: 'Experiencias',
+      accommodations: 'Alojamiento',
       about: 'Sobre Nosotros',
       contact: 'Contacto'
     },
     hero: {
-      title: 'We Love Portugal',
-      subtitle: 'Enoturismo de Lujo en Viñedos Icónicos',
-      description: 'Descubre las mejores experiencias vinícolas de Portugal con tours exclusivos, degustaciones premium y gastronomía de excelencia.',
-      cta: 'Reservar Ahora',
+      title: 'EuroWineExperience',
+      subtitle: 'Enoturismo Premium en Portugal',
+      description: 'Descubre las mejores experiencias vinícolas de Portugal con tours exclusivos, degustaciones premium, alojamientos de lujo y gastronomía de excelencia.',
+      cta: 'Explorar Experiencias',
       ctaSecondary: 'WhatsApp'
     },
     packages: {
-      title: 'Nuestros Paquetes Exclusivos',
-      subtitle: 'Experiencias únicas en bodegas portuguesas premiadas',
+      title: 'Nuestras Experiencias Premium',
+      subtitle: 'Bodegas, tours guiados, city tours y excursiones culturales',
       from: 'Desde',
       perPerson: '/persona',
+      perNight: '/noche',
       viewDetails: 'Ver Detalles',
-      reserve: 'Reservar Paquete',
+      reserve: 'Reservar',
       duration: 'Duración',
       groupSize: 'Tamaño del Grupo',
       includes: 'Qué incluye',
-      options: 'Opciones de Degustación'
+      options: 'Opciones',
+      filterAll: 'Todas',
+      filterWinery: 'Bodegas',
+      filterTours: 'Tours',
+      filterCityTour: 'City Tours',
+      filterDayTrip: 'Excursiones de 1 Día'
+    },
+    accommodations: {
+      title: 'Alojamientos Seleccionados en Lisboa',
+      subtitle: 'Hoteles boutique y de lujo en el centro histórico',
+      perNight: '/noche',
+      viewDetails: 'Ver Hotel',
+      bookNow: 'Reservar Alojamiento',
+      amenities: 'Servicios',
+      rating: 'Valoración',
+      distanceCenter: 'Distancia del Centro',
+      distanceAirport: 'Distancia del Aeropuerto',
+      stars: 'estrellas'
     },
     about: {
       title: 'Sobre Nosotros',
