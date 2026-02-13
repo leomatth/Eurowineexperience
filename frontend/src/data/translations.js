@@ -2,15 +2,16 @@ export const translations = {
   pt: {
     nav: {
       home: 'Início',
-      packages: 'Pacotes',
+      packages: 'Experiências',
+      accommodations: 'Hospedagens',
       about: 'Sobre',
       contact: 'Contato'
     },
     hero: {
-      title: 'We Love Portugal',
-      subtitle: 'Enoturismo de Luxo em Vinhedos Icônicos',
-      description: 'Descubra as melhores experiências vinícolas de Portugal com tours exclusivos, degustações premium e gastronomia de excelência.',
-      cta: 'Reserve Agora',
+      title: 'EuroWineExperience',
+      subtitle: 'Enoturismo Premium em Portugal',
+      description: 'Descubra as melhores experiências vinícolas de Portugal com tours exclusivos, degustações premium, hospedagens de luxo e gastronomia de excelência.',
+      cta: 'Explorar Experiências',
       ctaSecondary: 'Fale no WhatsApp'
     },
     packages: {
