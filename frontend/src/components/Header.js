@@ -32,8 +32,8 @@ const Header = () => {
           <div className="flex items-center gap-2 cursor-pointer" onClick={() => scrollToSection('home')}>
             <Wine className="h-8 w-8 text-red-700" strokeWidth={2.5} />
             <div>
-              <h1 className="text-2xl font-bold text-red-800">We Love Portugal</h1>
-              <p className="text-xs text-gray-600">Enoturismo de Luxo</p>
+              <h1 className="text-2xl font-bold text-red-800">EuroWineExperience</h1>
+              <p className="text-xs text-gray-600">Enoturismo Premium</p>
             </div>
           </div>
 
