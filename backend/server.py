@@ -69,6 +69,59 @@ async def get_status_checks():
     
     return status_checks
 
+@api_router.get("/download-source")
+async def download_source_code():
+    """
+    Generate and return a ZIP file containing the complete source code.
+    This creates a temporary ZIP with frontend and backend code.
+    """
+    try:
+        # Create a temporary file for the ZIP
+        temp_zip = tempfile.NamedTemporaryFile(delete=False, suffix='.zip')
+        zip_path = temp_zip.name
+        temp_zip.close()
+        
+        # Create ZIP file with source code
+        with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
+            # Add frontend files
+            frontend_base = Path('/app/frontend')
+            for folder in ['src', 'public']:
+                folder_path = frontend_base / folder
+                if folder_path.exists():
+                    for file_path in folder_path.rglob('*'):
+                        if file_path.is_file():
+                            arcname = f'frontend/{file_path.relative_to(frontend_base)}'
+                            zipf.write(file_path, arcname)
+            
+            # Add frontend config files
+            for config_file in ['package.json', 'craco.config.js', 'tailwind.config.js']:
+                config_path = frontend_base / config_file
+                if config_path.exists():
+                    zipf.write(config_path, f'frontend/{config_file}')
+            
+            # Add backend files
+            backend_base = Path('/app/backend')
+            for file_name in ['server.py', 'requirements.txt']:
+                file_path = backend_base / file_name
+                if file_path.exists():
+                    zipf.write(file_path, f'backend/{file_name}')
+            
+            # Add documentation if exists
+            memory_path = Path('/app/memory/PRD.md')
+            if memory_path.exists():
+                zipf.write(memory_path, 'docs/PRD.md')
+        
+        # Return the ZIP file
+        return FileResponse(
+            path=zip_path,
+            media_type='application/zip',
+            filename='eurowineexperience-source.zip',
+            background=None  # File will be deleted after response
+        )
+    except Exception as e:
+        logger.error(f"Error creating source code ZIP: {str(e)}")
+        return {"error": "Failed to generate source code package"}
+
 # Include the router in the main app
 app.include_router(api_router)
 
