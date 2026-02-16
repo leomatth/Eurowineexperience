@@ -17,6 +17,13 @@ import tempfile
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
+
 # MongoDB connection
 mongo_url = os.environ['MONGO_URL']
 client = AsyncIOMotorClient(mongo_url)
@@ -40,9 +47,14 @@ class StatusCheck(BaseModel):
 class StatusCheckCreate(BaseModel):
     client_name: str
 
+# Add root route directly to app for easier access
+@app.get("/")
+async def root():
+    return {"message": "API is running", "docs": "/docs", "api": "/api"}
+
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
-async def root():
+async def api_root():
     return {"message": "Hello World"}
 
 @api_router.post("/status", response_model=StatusCheck)
@@ -132,13 +144,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
-logger = logging.getLogger(__name__)
 
 @app.on_event("shutdown")
 async def shutdown_db_client():

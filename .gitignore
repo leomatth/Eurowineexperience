@@ -78,6 +78,10 @@ agenthub/agents/youtube/db
 
 # Mobile development
 android-sdk/ -e 
+
+# Emergent platform (removed)
+.emergent/
+
 # Environment files
 *.env
 *.env.*
