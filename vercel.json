@@ -7,7 +7,7 @@
     },
     {
       "source": "/((?!api).*)",
-      "destination": "./frontend/build/index.html"
+      "destination": "/frontend/build/index.html"
     }
   ]
 }
