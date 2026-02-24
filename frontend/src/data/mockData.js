@@ -5,6 +5,7 @@ export const packages = [
     id: 1,
     name: "Quinta das Murgas - Vertical Tasting Experience",
     location: "Bucelas, Lisboa",
+    region: "Lisboa",
     icon: "wine",
     tagline: "Degustação Vertical com Passeio a Cavalo",
     category: "winery",
@@ -38,6 +39,7 @@ export const packages = [
     id: 2,
     name: "Quinta da Bacalhôa - Palácio & Adega Museu",
     location: "Azeitão, Setúbal",
+    region: "Lisboa",
     icon: "castle",
     tagline: "História e Tradição Vinícola Secular",
     category: "winery",
@@ -73,6 +75,7 @@ export const packages = [
     id: 3,
     name: "AdegaMãe - Sal na Adega Gastronomic Experience",
     location: "Torres Vedras",
+    region: "Lisboa",
     icon: "utensils",
     tagline: "Harmonização Gastronômica com Vista",
     category: "winery",
@@ -107,6 +110,7 @@ export const packages = [
     id: 4,
     name: "Quinta do Seixo - Sogrape Douro Experience",
     location: "Douro Valley",
+    region: "Porto",
     icon: "grape",
     tagline: "Vinhos do Porto e Douro DOC",
     category: "winery",
@@ -141,6 +145,7 @@ export const packages = [
     id: 5,
     name: "Alentejo Wine Tour - 7 Dias com VinoTours",
     location: "Évora, Estremoz, Monsaraz",
+    region: "Alentejo",
     icon: "map",
     tagline: "Tour Imersivo de Enoturismo no Alentejo",
     category: "tour",
@@ -171,6 +176,7 @@ export const packages = [
     id: 6,
     name: "Lisboa City Tour - Hop On Hop Off 48h",
     location: "Lisboa Centro",
+    region: "Lisboa",
     icon: "bus",
     tagline: "Explore Lisboa ao Seu Ritmo",
     category: "city-tour",
@@ -204,6 +210,7 @@ export const packages = [
     id: 7,
     name: "Sintra, Cascais & Cabo da Roca - Day Trip",
     location: "Sintra, Cascais",
+    region: "Lisboa",
     icon: "mountain",
     tagline: "Palácios, Praias e o Fim da Europa",
     category: "day-trip",
@@ -234,6 +241,7 @@ export const packages = [
     id: 8,
     name: "Fátima, Nazaré & Óbidos - Fé e Tradição",
     location: "Fátima, Nazaré, Óbidos",
+    region: "Lisboa",
     icon: "church",
     tagline: "Santuários e Vilas Medievais",
     category: "day-trip",
@@ -257,6 +265,467 @@ export const packages = [
       "Óbidos: tempo livre na vila medieval",
       "Degustação de ginjinha em copo de chocolate",
       "Guia multilíngue (PT/EN/ES)"
+    ]
+  },
+  // 15 New Wine Experiences
+  {
+    id: 9,
+    name: "Quinta do Crasto – Visita + Prova 5 vinhos",
+    location: "Douro Superior",
+    region: "Porto",
+    icon: "wine",
+    tagline: "Experiência Premium no Douro",
+    category: "winery",
+    shortDescription: "Visita guiada vinhas, adega e barricas + prova comentada 5 vinhos DOC Douro e Porto",
+    fullDescription: "Descubra a Quinta do Crasto, uma propriedade histórica no Douro Superior com vistas espetaculares. Visite as vinhas centenárias, a adega tradicional e desfrute de uma prova comentada de 5 variedades premium.",
+    image: "https://www.quintadocrasto.wine/wp-content/uploads/2025/01/terroir-quinta-do-crasto-banner.webp",
+    gallery: [
+      "https://www.quintadocrasto.wine/wp-content/uploads/2025/01/terroir-quinta-do-crasto-banner.webp",
+      "https://www.quintadocrasto.wine/wp-content/uploads/2025/01/terroir-quinta-do-crasto-banner.webp",
+      "https://www.quintadocrasto.wine/wp-content/uploads/2025/01/terroir-quinta-do-crasto-banner.webp"
+    ],
+    priceFrom: 50,
+    priceTo: 80,
+    currency: "€",
+    duration: "90 min",
+    groupSize: "2-20 pax",
+    includes: [
+      "Visita guiada aos vinhedos e adega histórica",
+      "Prova comentada de 5 vinhos DOC Douro e Porto",
+      "Degustação de petiscos regionais",
+      "Explicação sobre uvas e técnicas tradicionais",
+      "Parking gratuito"
+    ],
+    tastingOptions: [
+      { name: "Prova 5 Vinhos", wines: 5, price: 50 },
+      { name: "Prova Premium 8 Vinhos", wines: 8, price: 80 }
+    ]
+  },
+  {
+    id: 10,
+    name: "Quinta da Roêda (Croft) – Wine Lover",
+    location: "Pinhão, Douro",
+    region: "Porto",
+    icon: "wine",
+    tagline: "Tradição de 300 Anos",
+    category: "winery",
+    shortDescription: "Tour guiado + prova selecionada de vinhos do Porto com vista panorâmica",
+    fullDescription: "Visite a lendária Quinta da Roêda da Croft, uma das quintas mais prestigiosas do Douro. Desfrute de um tour guiado personalizado seguido de uma prova selecionada de vinhos do Porto com vistas magníficas.",
+    image: "https://croftport.com/wp-content/uploads/2021/09/Croft-Quinta-da-Roeda-Douro-Enoturismo-4.jpg",
+    gallery: [
+      "https://croftport.com/wp-content/uploads/2021/09/Croft-Quinta-da-Roeda-Douro-Enoturismo-4.jpg",
+      "https://croftport.com/wp-content/uploads/2021/09/Croft-Quinta-da-Roeda-Douro-Enoturismo-4.jpg",
+      "https://croftport.com/wp-content/uploads/2021/09/Croft-Quinta-da-Roeda-Douro-Enoturismo-4.jpg"
+    ],
+    priceFrom: 48,
+    priceTo: 75,
+    currency: "€",
+    duration: "90 min",
+    groupSize: "2-30 pax",
+    includes: [
+      "Tour guiado completo da quinta",
+      "Prova selecionada de vinhos do Porto",
+      "Vista panorâmica do Vale do Douro",
+      "Acesso à loja de vinhos",
+      "Café e água mineral"
+    ],
+    tastingOptions: [
+      { name: "Prova Seleção", wines: 4, price: 48 },
+      { name: "Prova Premium Vintage", wines: 6, price: 75 }
+    ]
+  },
+  {
+    id: 11,
+    name: "Quinta da Pacheca – Visita + Prova 4 vinhos",
+    location: "Lamego, Douro",
+    region: "Porto",
+    icon: "wine",
+    tagline: "Lagares Antigos & Vinhos Modernos",
+    category: "winery",
+    shortDescription: "Visita lagares antigos + prova 2 DOC + 2 Porto no coração do Douro",
+    fullDescription: "Explore a histórica Quinta da Pacheca em Lamego com seus lagares tradicionais preservados. Desfrute de uma experiência autêntica visitando as estruturas antigas e provando uma seleção equilibrada de vinhos DOC Douro e Porto.",
+    image: "https://popoversandpassports.com/wp-content/uploads/2023/05/dji_fly_20230405_111322_913_1680856011819_photo_optimized_original.jpg",
+    gallery: [
+      "https://popoversandpassports.com/wp-content/uploads/2023/05/dji_fly_20230405_111322_913_1680856011819_photo_optimized_original.jpg",
+      "https://popoversandpassports.com/wp-content/uploads/2023/05/dji_fly_20230405_111322_913_1680856011819_photo_optimized_original.jpg",
+      "https://popoversandpassports.com/wp-content/uploads/2023/05/dji_fly_20230405_111322_913_1680856011819_photo_optimized_original.jpg"
+    ],
+    priceFrom: 38,
+    priceTo: 65,
+    currency: "€",
+    duration: "1h30",
+    groupSize: "2-40 pax",
+    includes: [
+      "Visita aos lagares antigos",
+      "Prova de 2 vinhos DOC Douro",
+      "Prova de 2 vinhos do Porto",
+      "Tábua de queijos e enchidos",
+      "Brinde final com vinho local"
+    ],
+    tastingOptions: [
+      { name: "Prova 4 Vinhos", wines: 4, price: 38 },
+      { name: "Prova 6 Vinhos + Almoço Leve", wines: 6, price: 65 }
+    ]
+  },
+  {
+    id: 12,
+    name: "Quinta do Vallado – Visita guiada + Prova",
+    location: "Peso da Régua",
+    region: "Porto",
+    icon: "vineyard",
+    tagline: "Vistas do Douro Comentadas",
+    category: "winery",
+    shortDescription: "Tour vinhas e adega + prova comentada com especialista local",
+    fullDescription: "Visite a Quinta do Vallado em Peso da Régua com suas vinhas de tirar o fôlego ao longo do Rio Douro. Experimente um tour guiado por especialistas seguido de uma prova comentada de seus melhores vinhos.",
+    image: "https://cdn.prod.website-files.com/6005cd6988e875868452d33d/680912cd7de1c1dc4ffe9e20_quinta-do-vallado-wine-hotel-douro-joandso.webp",
+    gallery: [
+      "https://cdn.prod.website-files.com/6005cd6988e875868452d33d/680912cd7de1c1dc4ffe9e20_quinta-do-vallado-wine-hotel-douro-joandso.webp",
+      "https://cdn.prod.website-files.com/6005cd6988e875868452d33d/680912cd7de1c1dc4ffe9e20_quinta-do-vallado-wine-hotel-douro-joandso.webp",
+      "https://cdn.prod.website-files.com/6005cd6988e875868452d33d/680912cd7de1c1dc4ffe9e20_quinta-do-vallado-wine-hotel-douro-joandso.webp"
+    ],
+    priceFrom: 50,
+    priceTo: 80,
+    currency: "€",
+    duration: "60-90 min",
+    groupSize: "2-25 pax",
+    includes: [
+      "Tour guiado pelas vinhas e adega",
+      "Prova comentada de 5 vinhos",
+      "Explicação sobre topografia e clima",
+      "Acesso à loja de vinhos",
+      "Petiscos e bebidas"
+    ],
+    tastingOptions: [
+      { name: "Prova Padrão", wines: 5, price: 50 },
+      { name: "Prova Exclusiva + Reserva", wines: 8, price: 80 }
+    ]
+  },
+  {
+    id: 13,
+    name: "Adega Luís Pato – Tour + Prova 6 vinhos",
+    location: "Amoreira da Gândara, Bairrada",
+    region: "Aveiro",
+    icon: "wine",
+    tagline: "Espumantes e Tintos da Bairrada",
+    category: "winery",
+    shortDescription: "Visita + prova Bairrada espumantes e tintos com produtor renomado",
+    fullDescription: "Descubra a tradicional Adega Luís Pato, famosa pelos seus espumantes de qualidade e tintos envelhecidos. Tour completo seguido de prova de 6 variedades selecionadas com orientação do produtor.",
+    image: "https://winesofportugal.com/media-files/images/VLP-2_czixcSG.width-1920.jpg",
+    gallery: [
+      "https://winesofportugal.com/media-files/images/VLP-2_czixcSG.width-1920.jpg",
+      "https://winesofportugal.com/media-files/images/VLP-2_czixcSG.width-1920.jpg",
+      "https://winesofportugal.com/media-files/images/VLP-2_czixcSG.width-1920.jpg"
+    ],
+    priceFrom: 40,
+    priceTo: 70,
+    currency: "€",
+    duration: "1h30",
+    groupSize: "2-40 pax",
+    includes: [
+      "Visita guiada à adega",
+      "Prova de 3 espumantes da Bairrada",
+      "Prova de 3 tintos envelhecidos",
+      "Tábua de queijos Bairrada",
+      "Explicação sobre técnicas tradicionais"
+    ],
+    tastingOptions: [
+      { name: "Prova 6 Vinhos", wines: 6, price: 40 },
+      { name: "Experiência VIP + Almoço", wines: "8 variedades", price: 70 }
+    ]
+  },
+  {
+    id: 14,
+    name: "Aliança Underground Museum + Prova",
+    location: "Sangalhos, Bairrada",
+    region: "Aveiro",
+    icon: "castle",
+    tagline: "Adega Subterrânea Única",
+    category: "winery",
+    shortDescription: "Museu subterrâneo + experiência enólogo com provas comentadas",
+    fullDescription: "Explore o famoso museu subterrâneo da Aliança com suas galerias históricas repletas de garrafas raras. Desfrute de uma experiência de enólogo com prova de vinhos selecionados em ambiente único.",
+    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/0c/11/82/alianca-underground-museum.jpg?w=900&h=500&s=1",
+    gallery: [
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/0c/11/82/alianca-underground-museum.jpg?w=900&h=500&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/0c/11/82/alianca-underground-museum.jpg?w=900&h=500&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/0c/11/82/alianca-underground-museum.jpg?w=900&h=500&s=1"
+    ],
+    priceFrom: 45,
+    priceTo: 75,
+    currency: "€",
+    duration: "3h",
+    groupSize: "2-30 pax",
+    includes: [
+      "Visita completa ao museu subterrâneo",
+      "Experiência enólogo guiada",
+      "Prova de 6 vinhos selecionados",
+      "Almoço leve com harmonização",
+      "Catálogo exclusivo com histórias das garrafas"
+    ],
+    visitOptions: [
+      { name: "Museu + Prova 4 Vinhos", price: 45 },
+      { name: "Experiência Enólogo Completa", price: 75 }
+    ]
+  },
+  {
+    id: 15,
+    name: "Messias Bairrada – Visita + Prova",
+    location: "Mealhada",
+    region: "Aveiro",
+    icon: "wine",
+    tagline: "Clássico da Bairrada desde 1926",
+    category: "winery",
+    shortDescription: "Tour adega + prova clássica Bairrada com história e tradição",
+    fullDescription: "Visite a icônica Adega Messias em Mealhada, operando desde 1926. Tour pela adega histórica seguido de prova de seus vinhos clássicos da Bairrada, tendo como pano de fundo décadas de tradição vinícola.",
+    image: "https://www.winetourism.com/files/2023/03/caves_2_peq_2_.jpg",
+    gallery: [
+      "https://www.winetourism.com/files/2023/03/caves_2_peq_2_.jpg",
+      "https://www.winetourism.com/files/2023/03/caves_2_peq_2_.jpg",
+      "https://www.winetourism.com/files/2023/03/caves_2_peq_2_.jpg"
+    ],
+    priceFrom: 17.50,
+    priceTo: 55,
+    currency: "€",
+    duration: "1h30",
+    groupSize: "2-50 pax",
+    includes: [
+      "Tour pela adega histórica de 1926",
+      "Prova clássica de 4 vinhos Bairrada",
+      "Explicação sobre história da casa",
+      "Acesso à loja com descontos especiais",
+      "Café e água mineral"
+    ],
+    tastingOptions: [
+      { name: "Prova Clássica", wines: 4, price: 17.50 },
+      { name: "Prova Premium + Tábua", wines: 6, price: 55 }
+    ]
+  },
+  {
+    id: 16,
+    name: "Quinta do Gradil – Visita + Prova",
+    location: "Cadaval",
+    region: "Lisboa",
+    icon: "wine",
+    tagline: "Vinhos a 55km de Lisboa",
+    category: "winery",
+    shortDescription: "Tour vinhas + provas variadas com vista sobre o Atlântico",
+    fullDescription: "Descubra a Quinta do Gradil em Cadaval, uma propriedade ampla com vinhedos diversificados. Desfrute de um tour completo pelos vinhedos e uma prova variada de seus vinhos regionais com vista ao oceano distante.",
+    image: "https://cdn.winedering.com/uploads/wineries/2094/big/27780387554916869875501084171383016085302585n.jpeg.webp?hash=8e30a659c31b53017073692309ab0da1",
+    gallery: [
+      "https://cdn.winedering.com/uploads/wineries/2094/big/27780387554916869875501084171383016085302585n.jpeg.webp?hash=8e30a659c31b53017073692309ab0da1",
+      "https://cdn.winedering.com/uploads/wineries/2094/big/27780387554916869875501084171383016085302585n.jpeg.webp?hash=8e30a659c31b53017073692309ab0da1",
+      "https://cdn.winedering.com/uploads/wineries/2094/big/27780387554916869875501084171383016085302585n.jpeg.webp?hash=8e30a659c31b53017073692309ab0da1"
+    ],
+    priceFrom: 20,
+    priceTo: 100,
+    currency: "€",
+    duration: "90 min",
+    groupSize: "2-30 pax",
+    includes: [
+      "Tour guiado pelos vinhedos",
+      "Prova de 4-6 vinhos variados",
+      "Tábua de queijos portugueses",
+      "Aromatização com vista ao Atlântico",
+      "Acesso à loja de vinhos"
+    ],
+    visitOptions: [
+      { name: "Prova Seleção", price: 20 },
+      { name: "Experiência Premium + Almoço", price: 100 }
+    ]
+  },
+  {
+    id: 17,
+    name: "AdegaMãe Cadaval – Experiências Personalizadas",
+    location: "Cadaval",
+    region: "Lisboa",
+    icon: "utensils",
+    tagline: "Harmonização Personalizada",
+    category: "winery",
+    shortDescription: "Experiências personalizadas + prova com sommelier especializado",
+    fullDescription: "Visite o espaço gastronômico de AdegaMãe em Cadaval. Crie sua própria experiência com sommelier especializado, escolhendo entre provas clássicas ou harmonizações gastronômicas personalizadas.",
+    image: "https://static.portugalbywine.com/media//MULTIMEDIA/FOTOS/3337/2625618433396c.jpg",
+    priceFrom: 18,
+    priceTo: 96,
+    currency: "€",
+    duration: "60-120 min",
+    groupSize: "2-40 pax",
+    includes: [
+      "Consulta com sommelier especializado",
+      "Prova personalizada (4-8 vinhos)",
+      "Harmonização com petiscos ou almoço",
+      "Acesso à loja de vinhos",
+      "Material informativo exclusivo"
+    ],
+    mealOptions: [
+      { name: "Prova Personalizada + Petiscos", price: 18 },
+      { name: "Harmonização Almoço Premium", price: 96 }
+    ]
+  },
+  {
+    id: 18,
+    name: "Quinta da Chocapalha – Visita + Prova 5 vinhos",
+    location: "Chocapalha",
+    region: "Lisboa",
+    icon: "wine",
+    tagline: "Vinícola Histórica em Chocapalha",
+    category: "winery",
+    shortDescription: "Tour vinícola completo + prova 5 vinhos da região com história",
+    fullDescription: "Explore a tradicional Quinta da Chocapalha com seus vinhedos históricos. Desfrute de um tour completo seguido de uma prova de 5 variedades que contam a história dos vinhos da região de Chocapalha.",
+    image: "https://slowportugal.pt/wp-content/uploads/2021/07/chocapalha-55.jpg",
+    priceFrom: 35,
+    priceTo: 75,
+    currency: "€",
+    duration: "90 min",
+    groupSize: "2-25 pax",
+    includes: [
+      "Tour completo pelos vinhedos históricos",
+      "Prova de 5 vinhos da região",
+      "Explicação sobre tradição local",
+      "Tábua de queijos e pão",
+      "Acesso à loja com descontos"
+    ],
+    tastingOptions: [
+      { name: "Prova 5 Vinhos", wines: 5, price: 35 },
+      { name: "Prova Premium + Almoço Leve", wines: 8, price: 75 }
+    ]
+  },
+  {
+    id: 19,
+    name: "Quinta da Boa Esperança – Alentejo Autêntico",
+    location: "Borba",
+    region: "Alentejo",
+    icon: "grape",
+    tagline: "Alma do Alentejo",
+    category: "winery",
+    shortDescription: "Propriedade familiar + prova 5 vinhos Alentejo com vista para planícies",
+    fullDescription: "Descubra a paixão pela vinicultura na Quinta da Boa Esperança em Borba. Uma propriedade familiar autêntica que oferece prova de seus melhores vinhos Alentejo com vista para as planícies onduladas do sul.",
+    image: "https://static.portugalbywine.com/media//MULTIMEDIA/FOTOS/2802/12469369074258h.JPG",
+    priceFrom: 25,
+    priceTo: 60,
+    currency: "€",
+    duration: "2h",
+    groupSize: "2-20 pax",
+    includes: [
+      "Recepção familiar e apresentação da quinta",
+      "Tour pelas vinhas e adega",
+      "Prova de 5 vinhos Alentejo",
+      "Almoço leve com especialidades locais",
+      "Histórias e tradições familiares"
+    ],
+    tastingOptions: [
+      { name: "Prova 5 Vinhos + Petiscos", wines: 5, price: 25 },
+      { name: "Experiência Completa com Almoço", wines: 8, price: 60 }
+    ]
+  },
+  {
+    id: 20,
+    name: "Adega de Borba – Vinhos Tradicionais",
+    location: "Borba",
+    region: "Alentejo",
+    icon: "wine",
+    tagline: "Cooperativa com 50 Anos",
+    category: "winery",
+    shortDescription: "Cooperative + prova de vinhos Borba com raízes profundas",
+    fullDescription: "Visite a Adega de Borba, uma cooperativa com mais de 50 anos de história produzindo vinhos tradicionais Alentejo. Prova de seus melhores rótulos acompanhada por explicações sobre a tradição cooperativa.",
+    image: "https://media.winalist.com/prod/uploads/nG9qUhHTDwJv.jpg?twic=v1&twic=v1/cover=730x597",
+    priceFrom: 15,
+    priceTo: 50,
+    currency: "€",
+    duration: "1h30",
+    groupSize: "2-40 pax",
+    includes: [
+      "Visita à cooperativa histórica",
+      "Prova de 4-5 vinhos tradicionais Borba",
+      "Explicação sobre modelo cooperativo",
+      "Tábua de enchidos e queijo",
+      "Desconto na compra de vinhos"
+    ],
+    visitOptions: [
+      { name: "Prova Clássica Borba", price: 15 },
+      { name: "Prova Premium + Almoço", price: 50 }
+    ]
+  },
+  {
+    id: 21,
+    name: "Malhadinha Nova – Ecolodge Vitivinícola",
+    location: "Évora (Reguengos de Monsaraz)",
+    region: "Alentejo",
+    icon: "mountain",
+    tagline: "Sustentabilidade & Vinhos",
+    category: "winery",
+    shortDescription: "Lodge ecológico + tour sustentável + prova 6 vinhos premiados",
+    fullDescription: "Experimente a inovadora Malhadinha Nova, um ecolodge único que combina sustentabilidade com viticultura de qualidade. Tour pela propriedade ecológica seguido de prova de seus vinhos premiados com vista para o Alentejo.",
+    image: "https://q-xx.bstatic.com/xdata/images/hotel/max750/486612703.jpg?k=7dfe363327fbe1d81829b92c42a98908828bddce0894d587f7308ed796618df9&o=&a=839822",
+    priceFrom: 55,
+    priceTo: 120,
+    currency: "€",
+    duration: "3h",
+    groupSize: "2-15 pax",
+    includes: [
+      "Tour pela propriedade ecológica",
+      "Prova de 6 vinhos premiados",
+      "Explicação sobre sustentabilidade",
+      "Almoço com produtos locais",
+      "Acesso às instalações do ecolodge"
+    ],
+    visitOptions: [
+      { name: "Prova + Petiscos", price: 55 },
+      { name: "Experiência Completa + Almoço Gourmet", price: 120 }
+    ]
+  },
+  {
+    id: 22,
+    name: "Quinta de Sanguinhal – Vinhos Artesanais",
+    location: "Sanguinhal",
+    region: "Lisboa",
+    icon: "wine",
+    tagline: "Produção Artesanal Autêntica",
+    category: "winery",
+    shortDescription: "Quinta artesanal + prova 5 vinhos com produção familiar",
+    fullDescription: "Descubra a Quinta de Sanguinhal, uma propriedade familiar pequena focada em produção artesanal de alta qualidade. Conheça o produtor pessoalmente e desfrute de uma prova íntima de seus vinhos produzidos com paixão.",
+    image: "https://cdn.winalist.com/uploads/OFeQ_g2tnvMG.jpg",
+    priceFrom: 30,
+    priceTo: 65,
+    currency: "€",
+    duration: "2h",
+    groupSize: "2-12 pax",
+    includes: [
+      "Encontro com o produtor artesanal",
+      "Tour personalizado pela quinta",
+      "Prova de 5 vinhos artesanais",
+      "Histórias sobre cada vinho",
+      "Tábua de delicatessen local"
+    ],
+    tastingOptions: [
+      { name: "Prova Artesanal 5 Vinhos", wines: 5, price: 30 },
+      { name: "Experiência VIP com Almoço", wines: 8, price: 65 }
+    ]
+  },
+  {
+    id: 23,
+    name: "Quinta da Viúva Gomes – Herança Tradicional",
+    location: "Torres Vedras",
+    region: "Lisboa",
+    icon: "wine",
+    tagline: "Tradição Passada de Geração em Geração",
+    category: "winery",
+    shortDescription: "Propriedade histórica + prova 4 vinhos com história familiar",
+    fullDescription: "Visite a Quinta da Viúva Gomes em Torres Vedras, uma propriedade com herança familiar profunda refletida em cada vinho. Prova de seus vinhos clássicos acompanhada pelas histórias que moldaram a casa ao longo das décadas.",
+    image: "https://static.portugalbywine.com/media//MULTIMEDIA/FOTOS/5120/14649102278035H_710.jpg",
+    priceFrom: 28,
+    priceTo: 70,
+    currency: "€",
+    duration: "1h45",
+    groupSize: "2-20 pax",
+    includes: [
+      "Apresentação histórica da família",
+      "Tour pelas vinhas e adega",
+      "Prova de 4 vinhos tradicionais",
+      "Tábua de queijos e pão caseiro",
+      "Histórias familiares exclusivas"
+    ],
+    tastingOptions: [
+      { name: "Prova Herança 4 Vinhos", wines: 4, price: 28 },
+      { name: "Experiência Histórica + Almoço", wines: 6, price: 70 }
     ]
   }
 ];

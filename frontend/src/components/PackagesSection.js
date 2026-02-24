@@ -13,6 +13,7 @@ const PackagesSection = () => {
   const [expandedPackage, setExpandedPackage] = useState(null);
   const [selectedPackage, setSelectedPackage] = useState(null);
   const [filter, setFilter] = useState('all');
+  const [activeRegion, setActiveRegion] = useState('all');
 
   const getIcon = (iconName) => {
     const icons = {
@@ -57,9 +58,11 @@ const PackagesSection = () => {
     }
   };
 
-  const filteredPackages = filter === 'all' 
-    ? packages 
-    : packages.filter(pkg => pkg.category === filter);
+  const filteredPackages = packages.filter(pkg => {
+    const matchesCategory = filter === 'all' || pkg.category === filter;
+    const matchesRegion = activeRegion === 'all' || pkg.region === activeRegion;
+    return matchesCategory && matchesRegion;
+  });
 
   const filters = [
     { value: 'all', label: t.packages.filterAll || 'Todas' },
@@ -67,6 +70,14 @@ const PackagesSection = () => {
     { value: 'tour', label: t.packages.filterTours || 'Tours' },
     { value: 'city-tour', label: t.packages.filterCityTour || 'City Tours' },
     { value: 'day-trip', label: t.packages.filterDayTrip || 'Passeios de 1 Dia' }
+  ];
+
+  const regionFilters = [
+    { value: 'all', label: 'Todas' },
+    { value: 'Porto', label: 'Porto' },
+    { value: 'Aveiro', label: 'Aveiro' },
+    { value: 'Lisboa', label: 'Lisboa' },
+    { value: 'Alentejo', label: 'Alentejo' }
   ];
 
   return (
@@ -81,6 +92,26 @@ const PackagesSection = () => {
           <p className="text-lg text-gray-600">
             {t.packages.subtitle}
           </p>
+        </div>
+
+        {/* Region Filter Buttons */}
+        <div className="mb-8">
+          <p className="text-sm font-semibold text-gray-700 mb-3">Filtrar por Região:</p>
+          <div className="flex flex-wrap justify-center gap-3 mb-8">
+            {regionFilters.map((regionOption) => (
+              <button
+                key={regionOption.value}
+                onClick={() => setActiveRegion(regionOption.value)}
+                className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
+                  activeRegion === regionOption.value
+                    ? 'bg-red-700 text-white shadow-lg scale-105'
+                    : 'bg-white text-gray-700 hover:bg-red-50 shadow-md hover:shadow-lg'
+                }`}
+              >
+                {regionOption.label}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Filter Buttons */}
