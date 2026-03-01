@@ -2,6 +2,7 @@ import { Award, Heart, Leaf } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../data/translations';
+import { optimizeImageUrl } from '../lib/utils';
 
 const AboutSection = () => {
   const { language } = useLanguage();
@@ -29,7 +30,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="sobre" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
@@ -59,24 +60,32 @@ const AboutSection = () => {
             <div className="relative">
               <div className="grid grid-cols-2 gap-4">
                 <img
-                  src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTZ8MHwxfHNlYXJjaHwzfHx3aW5lJTIwdGFzdGluZ3xlbnwwfHx8fDE3NzA1NTEyNDR8MA&ixlib=rb-4.1.0&q=85"
+                  src={optimizeImageUrl("https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTZ8MHwxfHNlYXJjaHwzfHx3aW5lJTIwdGFzdGluZ3xlbnwwfHx8fDE3NzA1NTEyNDR8MA&ixlib=rb-4.1.0&q=85")}
                   alt="Wine Tasting"
                   className="rounded-lg shadow-lg h-48 w-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <img
-                  src="https://images.unsplash.com/photo-1694781558887-d84d9ba7603f"
+                  src={optimizeImageUrl("https://images.unsplash.com/photo-1694781558887-d84d9ba7603f")}
                   alt="Wine Cellar"
                   className="rounded-lg shadow-lg h-48 w-full object-cover mt-8"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <img
-                  src="https://images.pexels.com/photos/16547182/pexels-photo-16547182.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                  src={optimizeImageUrl("https://images.pexels.com/photos/16547182/pexels-photo-16547182.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")}
                   alt="Vineyard"
                   className="rounded-lg shadow-lg h-48 w-full object-cover -mt-8"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <img
-                  src="https://images.unsplash.com/photo-1763867641182-9ff4cfbcc389"
+                  src={optimizeImageUrl("https://images.unsplash.com/photo-1763867641182-9ff4cfbcc389")}
                   alt="Restaurant"
                   className="rounded-lg shadow-lg h-48 w-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-gradient-to-br from-red-200 to-amber-200 rounded-full blur-2xl opacity-50"></div>

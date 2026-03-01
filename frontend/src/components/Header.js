@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { Wine, Menu, X, Globe } from 'lucide-react';
-import { Button } from './ui/button';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../data/translations';
 
@@ -9,14 +9,20 @@ const Header = () => {
   const [isLangOpen, setIsLangOpen] = useState(false);
   const { language, changeLanguage } = useLanguage();
   const t = translations[language];
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMenuOpen(false);
+  const scrollToHash = useCallback((sectionId) => {
+    if (location.pathname === '/') {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        setIsMenuOpen(false);
+      }
+    } else {
+      navigate('/', { state: { scrollTo: sectionId } });
     }
-  };
+  }, [location.pathname, navigate]);
 
   const languages = [
     { code: 'pt', name: 'Português', flag: '🇵🇹' },
@@ -29,29 +35,41 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center gap-2 cursor-pointer" onClick={() => scrollToSection('home')}>
+          <Link to="/" className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity">
             <Wine className="h-8 w-8 text-red-700" strokeWidth={2.5} />
             <div>
-              <h1 className="text-2xl font-bold text-red-800">EuroWineExperience</h1>
+              <h1 className="text-lg md:text-2xl font-bold text-red-800">EuroWineExperience</h1>
               <p className="text-xs text-gray-600">Enoturismo Premium</p>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-red-700 transition-colors font-medium">
-              {t.nav.home}
-            </button>
-            <button onClick={() => scrollToSection('packages')} className="text-gray-700 hover:text-red-700 transition-colors font-medium">
+            <Link
+              to="/experiencias"
+              className="text-gray-700 hover:text-red-700 transition-colors font-medium"
+            >
               {t.nav.packages}
-            </button>
-            <button onClick={() => scrollToSection('accommodations')} className="text-gray-700 hover:text-red-700 transition-colors font-medium">
+            </Link>
+
+            <Link
+              to="/hospedagem"
+              className="text-gray-700 hover:text-red-700 transition-colors font-medium"
+            >
               {t.nav.accommodations}
-            </button>
-            <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-red-700 transition-colors font-medium">
+            </Link>
+
+            <button
+              onClick={() => scrollToHash('sobre')}
+              className="text-gray-700 hover:text-red-700 transition-colors font-medium"
+            >
               {t.nav.about}
             </button>
-            <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-red-700 transition-colors font-medium">
+
+            <button
+              onClick={() => scrollToHash('contatos')}
+              className="text-gray-700 hover:text-red-700 transition-colors font-medium"
+            >
               {t.nav.contact}
             </button>
 
@@ -84,16 +102,13 @@ const Header = () => {
                 </div>
               )}
             </div>
-
-            <Button onClick={() => scrollToSection('contact')} className="bg-red-700 hover:bg-red-800">
-              {t.hero.cta}
-            </Button>
           </nav>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden p-2 text-gray-700 hover:text-red-700 transition-colors"
+            aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -103,22 +118,36 @@ const Header = () => {
         {isMenuOpen && (
           <nav className="md:hidden mt-4 pb-4 border-t border-gray-200 pt-4">
             <div className="flex flex-col gap-4">
-              <button onClick={() => scrollToSection('home')} className="text-left text-gray-700 hover:text-red-700 transition-colors font-medium">
-                {t.nav.home}
-              </button>
-              <button onClick={() => scrollToSection('packages')} className="text-left text-gray-700 hover:text-red-700 transition-colors font-medium">
+              <Link
+                to="/experiencias"
+                onClick={() => setIsMenuOpen(false)}
+                className="text-left text-gray-700 hover:text-red-700 transition-colors font-medium"
+              >
                 {t.nav.packages}
-              </button>
-              <button onClick={() => scrollToSection('accommodations')} className="text-left text-gray-700 hover:text-red-700 transition-colors font-medium">
+              </Link>
+
+              <Link
+                to="/hospedagem"
+                onClick={() => setIsMenuOpen(false)}
+                className="text-left text-gray-700 hover:text-red-700 transition-colors font-medium"
+              >
                 {t.nav.accommodations}
-              </button>
-              <button onClick={() => scrollToSection('about')} className="text-left text-gray-700 hover:text-red-700 transition-colors font-medium">
+              </Link>
+
+              <button
+                onClick={() => scrollToHash('sobre')}
+                className="text-left text-gray-700 hover:text-red-700 transition-colors font-medium"
+              >
                 {t.nav.about}
               </button>
-              <button onClick={() => scrollToSection('contact')} className="text-left text-gray-700 hover:text-red-700 transition-colors font-medium">
+
+              <button
+                onClick={() => scrollToHash('contatos')}
+                className="text-left text-gray-700 hover:text-red-700 transition-colors font-medium"
+              >
                 {t.nav.contact}
               </button>
-              
+
               {/* Mobile Language Selector */}
               <div className="flex gap-2 pt-2 border-t border-gray-200">
                 {languages.map((lang) => (
@@ -129,8 +158,8 @@ const Header = () => {
                       setIsMenuOpen(false);
                     }}
                     className={`px-3 py-2 rounded-lg border transition-colors ${
-                      language === lang.code 
-                        ? 'border-red-700 bg-red-50 text-red-700' 
+                      language === lang.code
+                        ? 'border-red-700 bg-red-50 text-red-700'
                         : 'border-gray-200 text-gray-700 hover:border-red-700'
                     }`}
                   >
@@ -139,9 +168,12 @@ const Header = () => {
                 ))}
               </div>
 
-              <Button onClick={() => scrollToSection('contact')} className="bg-red-700 hover:bg-red-800 w-full">
+              <button
+                onClick={() => scrollToHash('contatos')}
+                className="w-full bg-red-700 hover:bg-red-800 text-white py-2 rounded-lg font-semibold"
+              >
                 {t.hero.cta}
-              </Button>
+              </button>
             </div>
           </nav>
         )}

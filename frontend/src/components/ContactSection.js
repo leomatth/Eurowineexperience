@@ -56,7 +56,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 to-red-50">
+    <section id="contatos" className="py-20 bg-gradient-to-br from-gray-50 to-red-50">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
@@ -113,7 +113,7 @@ const ContactSection = () => {
                       type="tel"
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="+351 XXX XXX XXX"
+                      placeholder="+55 XX XXXXX XXXX"
                       className="mt-2"
                     />
                   </div>

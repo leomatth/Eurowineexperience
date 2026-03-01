@@ -3,6 +3,7 @@ import { Button } from './ui/button';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../data/translations';
 import { heroImages, companyInfo } from '../data/mockData';
+import { optimizeImageUrl } from '../lib/utils';
 
 const HeroSection = () => {
   const { language } = useLanguage();
@@ -24,9 +25,10 @@ const HeroSection = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src={heroImages[0]}
+          src={optimizeImageUrl(heroImages[0], 1600, 70)}
           alt="Portuguese Vineyards"
           className="w-full h-full object-cover"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-red-900/80 via-amber-900/70 to-green-900/60"></div>
         <div className="absolute inset-0 bg-black/20"></div>

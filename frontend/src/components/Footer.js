@@ -1,4 +1,5 @@
 import { Wine, Mail, Phone, MapPin, Facebook, Instagram, Youtube } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { useState } from 'react';
@@ -23,13 +24,6 @@ const Footer = () => {
     setEmail('');
   };
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <footer className="bg-gradient-to-br from-gray-900 via-red-950 to-gray-900 text-white">
       <div className="container mx-auto px-4 py-16">
@@ -39,7 +33,7 @@ const Footer = () => {
             <div className="flex items-center gap-2 mb-4">
               <Wine className="h-8 w-8 text-amber-400" strokeWidth={2.5} />
               <div>
-                <h3 className="text-2xl font-bold">EuroWineExperience</h3>
+                <h3 className="text-lg md:text-2xl font-bold">EuroWineExperience</h3>
               </div>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
@@ -51,6 +45,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/10 hover:bg-red-700 p-3 rounded-lg transition-colors"
+                title="Siga-nos no Instagram"
               >
                 <Instagram className="h-5 w-5" />
               </a>
@@ -59,6 +54,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/10 hover:bg-red-700 p-3 rounded-lg transition-colors"
+                title="Siga-nos no Facebook"
               >
                 <Facebook className="h-5 w-5" />
               </a>
@@ -67,6 +63,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/10 hover:bg-red-700 p-3 rounded-lg transition-colors"
+                title="Inscreva-se no YouTube"
               >
                 <Youtube className="h-5 w-5" />
               </a>
@@ -78,36 +75,36 @@ const Footer = () => {
             <h4 className="text-lg font-bold mb-4 text-amber-400">{t.footer.quickLinks}</h4>
             <ul className="space-y-3">
               <li>
-                <button
-                  onClick={() => scrollToSection('home')}
+                <Link
+                  to="/"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   {t.nav.home}
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => scrollToSection('packages')}
+                <Link
+                  to="/experiencias"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   {t.nav.packages}
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => scrollToSection('about')}
+                <Link
+                  to="/hospedagem"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  {t.nav.accommodations}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/sobre"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   {t.nav.about}
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('contact')}
-                  className="text-gray-300 hover:text-white transition-colors"
-                >
-                  {t.nav.contact}
-                </button>
+                </Link>
               </li>
             </ul>
           </div>

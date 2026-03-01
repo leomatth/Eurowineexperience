@@ -15,7 +15,12 @@ import tempfile
 
 
 ROOT_DIR = Path(__file__).parent.parent
-load_dotenv(ROOT_DIR / 'backend/.env')
+# Note: .env file should be in the api/ folder or root  
+env_path = Path(__file__).parent / '.env'
+if env_path.exists():
+    load_dotenv(env_path)
+else:
+    load_dotenv()  # Try root folder
 
 # Configure logging
 logging.basicConfig(
@@ -120,17 +125,18 @@ async def download_source_code():
                 if config_path.exists():
                     zipf.write(config_path, f'frontend/{config_file}')
             
-            # Add backend files
-            backend_base = Path(ROOT_DIR / 'backend')
-            for file_name in ['server.py', 'requirements.txt']:
-                file_path = backend_base / file_name
+            # Add API files
+            api_base = Path(ROOT_DIR / 'api')
+            for file_name in ['index.py', 'requirements.txt']:
+                file_path = api_base / file_name
                 if file_path.exists():
-                    zipf.write(file_path, f'backend/{file_name}')
+                    zipf.write(file_path, f'api/{file_name}')
             
-            # Add documentation if exists
-            memory_path = Path(ROOT_DIR / 'memory/PRD.md')
-            if memory_path.exists():
-                zipf.write(memory_path, 'docs/PRD.md')
+            # Add root configuration files
+            for config_file in ['package.json', 'vercel.json', 'README.md']:
+                config_path = ROOT_DIR / config_file
+                if config_path.exists():
+                    zipf.write(config_path, config_file)
         
         # Return the ZIP file
         return FileResponse(
