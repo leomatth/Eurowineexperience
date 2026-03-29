@@ -68,7 +68,7 @@ const FAQSection = () => {
               Nossa equipe está pronta para ajudar você a criar a experiência perfeita
             </p>
             <a
-              href="#contact"
+              href="#contatos"
               className="inline-block bg-white text-red-700 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg"
             >
               Entre em Contato

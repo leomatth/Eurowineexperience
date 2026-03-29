@@ -80,7 +80,7 @@ const HomePage = () => {
 
   const handleBooking = (pkg) => {
     setSelectedPackage(pkg);
-    const element = document.getElementById('contact');
+    const element = document.getElementById('contatos');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }

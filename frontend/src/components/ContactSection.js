@@ -81,8 +81,8 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contatos" className="py-20 bg-gradient-to-br from-gray-50 to-red-50">
-      <div className="container mx-auto px-4">
+    <section id="contatos" className="py-20 bg-gradient-to-br from-gray-50 to-red-50 overflow-hidden">
+      <div className="container mx-auto">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
@@ -94,9 +94,9 @@ const ContactSection = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 min-w-0">
             {/* Contact Form */}
-            <Card className="shadow-xl border-0">
+            <Card className="shadow-xl border-0 max-w-full overflow-hidden min-w-0">
               <CardHeader>
                 <CardTitle className="text-2xl">Envie sua Mensagem</CardTitle>
                 <CardDescription>Preencha o formulário e retornaremos em até 24h</CardDescription>
@@ -192,9 +192,9 @@ const ContactSection = () => {
             </Card>
 
             {/* Contact Info & WhatsApp */}
-            <div className="space-y-6">
+            <div className="space-y-6 min-w-0">
               {/* Contact Details */}
-              <Card className="shadow-xl border-0">
+              <Card className="shadow-xl border-0 max-w-full overflow-hidden">
                 <CardHeader>
                   <CardTitle className="text-2xl">Informações de Contato</CardTitle>
                 </CardHeader>
@@ -217,7 +217,7 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <p className="font-semibold text-gray-900">Email</p>
-                      <a href={`mailto:${companyInfo.email}`} className="text-red-700 hover:underline">
+                      <a href={`mailto:${companyInfo.email}`} className="text-red-700 hover:underline text-sm sm:text-base truncate block max-w-[200px] sm:max-w-none">
                         {companyInfo.email}
                       </a>
                     </div>
@@ -237,7 +237,7 @@ const ContactSection = () => {
               </Card>
 
               {/* WhatsApp CTA */}
-              <Card className="shadow-xl border-0 bg-gradient-to-br from-green-50 to-emerald-50">
+              <Card className="shadow-xl border-0 bg-gradient-to-br from-green-50 to-emerald-50 max-w-full overflow-hidden">
                 <CardContent className="p-8 text-center">
                   <div className="bg-green-500 text-white p-4 rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-lg">
                     <MessageCircle className="h-10 w-10" />
@@ -259,7 +259,7 @@ const ContactSection = () => {
               </Card>
 
               {/* Map Placeholder */}
-              <Card className="shadow-xl border-0 overflow-hidden">
+              <Card className="shadow-xl border-0 overflow-hidden max-w-full">
                 <div className="h-64 bg-gray-200 relative">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d99372.63799227693!2d-9.226929749999999!3d38.7436266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19331a61e4f33b%3A0x400ebbde49036d0!2sLisboa%2C%20Portugal!5e0!3m2!1spt-BR!2sbr!4v1234567890123!5m2!1spt-BR!2sbr"

@@ -1,6 +1,17 @@
 /* Global App Styles */
 .App {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+/* Prevent containers and cards from exceeding viewport on mobile */
+@media (max-width: 640px) {
+    .container {
+        max-width: 100% !important;
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+    }
 }
 
 /* Smooth Animations */

@@ -1,14 +1,17 @@
-import { Trophy, Users, Globe, Heart, MapPin, Phone, Mail, Instagram, Linkedin, Facebook, Star } from 'lucide-react';
+import { Users, Globe, Heart, Instagram, Facebook, Star } from 'lucide-react';
 import { Card, CardContent } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../data/translations';
+import { companyInfo } from '../data/mockData';
+import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
 const AboutPage = () => {
   const { language } = useLanguage();
   const t = translations[language];
+  const navigate = useNavigate();
 
   useEffect(() => { document.title = 'Sobre Nós | EuroWineExperience'; }, []);
 
@@ -66,7 +69,7 @@ const AboutPage = () => {
   ];
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 overflow-hidden">
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-r from-red-700 to-red-900 text-white">
         <div className="container mx-auto px-4">
@@ -178,10 +181,16 @@ const AboutPage = () => {
               Entre em contato conosco para discutir sua próxima experiência de enoturismo
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button className="bg-white text-red-700 hover:bg-red-50 px-8 py-3">
+              <Button
+                onClick={() => navigate('/', { state: { scrollTo: 'contatos' } })}
+                className="bg-white text-red-700 hover:bg-red-50 px-8 py-3"
+              >
                 Entre em Contato
               </Button>
-              <Button className="bg-red-600 hover:bg-red-500 border border-white px-8 py-3">
+              <Button
+                onClick={() => navigate('/experiencias')}
+                className="bg-red-600 hover:bg-red-500 border border-white px-8 py-3"
+              >
                 Explorar Experiências
               </Button>
             </div>
@@ -199,27 +208,25 @@ const AboutPage = () => {
                 href="https://www.instagram.com/europawineexperience/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Instagram"
                 className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-red-100 text-red-700 hover:bg-red-700 hover:text-white transition-colors"
               >
                 <Instagram className="h-6 w-6" />
               </a>
               <a
-                href="#"
+                href={companyInfo.socialMedia.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
                 className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 text-blue-700 hover:bg-blue-700 hover:text-white transition-colors"
               >
                 <Facebook className="h-6 w-6" />
-              </a>
-              <a
-                href="#"
-                className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 text-blue-700 hover:bg-blue-700 hover:text-white transition-colors"
-              >
-                <Linkedin className="h-6 w-6" />
               </a>
             </div>
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 };
 

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Star, MapPin, MessageCircle, Wifi, Coffee, Dumbbell, Phone as PhoneIcon } from 'lucide-react';
+import { Star, MapPin, MessageCircle } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
@@ -52,7 +52,7 @@ const HospedagemPage = () => {
   ];
 
   return (
-    <main className="min-h-screen bg-gray-50 pt-20">
+    <div className="min-h-screen bg-gray-50 pt-20">
       {/* Hero Banner */}
       <section className="py-16 bg-gradient-to-r from-red-700 to-red-900 text-white">
         <div className="container mx-auto px-4 text-center">
@@ -276,7 +276,7 @@ const HospedagemPage = () => {
           )}
         </DialogContent>
       </Dialog>
-    </main>
+    </div>
   );
 };
 

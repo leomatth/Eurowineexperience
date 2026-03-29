@@ -46,13 +46,13 @@ const AboutSection = () => {
           {/* About Content */}
           <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
             <div className="space-y-6">
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-lg text-gray-700 leading-relaxed text-justify">
                 {t.about.description1}
               </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-lg text-gray-700 leading-relaxed text-justify">
                 {t.about.description2}
               </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-lg text-gray-700 leading-relaxed text-justify">
                 {t.about.description3}
               </p>
             </div>

@@ -35,7 +35,7 @@ function App() {
         <ScrollManager />
         <div className="App">
           <Header />
-          <main>
+          <main className="flex-1">
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/experiencias" element={<ExperienciasPage />} />
