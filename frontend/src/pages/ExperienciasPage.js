@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Wine, MapPin, Clock, Users, ChevronDown, ChevronUp, Castle, Utensils, Grape, Map, Bus, Mountain, Church, MessageCircle, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../components/ui/card';
 import { Button } from '../components/ui/button';
@@ -17,6 +17,8 @@ const ExperienciasPage = () => {
   const [activeRegion, setActiveRegion] = useState('all');
   const [selectedPkg, setSelectedPkg] = useState(null);
   const [galleryIndex, setGalleryIndex] = useState(0);
+
+  useEffect(() => { document.title = 'Experiências | EuroWineExperience'; }, []);
 
   const getIcon = (iconName) => {
     const icons = {

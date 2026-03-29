@@ -4,10 +4,13 @@ import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../data/translations';
+import { useEffect } from 'react';
 
 const AboutPage = () => {
   const { language } = useLanguage();
   const t = translations[language];
+
+  useEffect(() => { document.title = 'Sobre Nós | EuroWineExperience'; }, []);
 
   const values = [
     {
@@ -193,7 +196,7 @@ const AboutPage = () => {
             <h3 className="text-center text-gray-900 font-semibold mb-6">Acompanhe-nos nas Redes Sociais</h3>
             <div className="flex justify-center gap-6">
               <a
-                href="https://www.instagram.com/eurowineexperiencie/"
+                href="https://www.instagram.com/europawineexperience/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-red-100 text-red-700 hover:bg-red-700 hover:text-white transition-colors"

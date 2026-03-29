@@ -45,13 +45,13 @@
 
 #### 3. **AdegaMãe - Sal na Adega Gastronomic Experience**
 - **Localização**: Torres Vedras
-- **Preço**: €18-85/pessoa
+- **Preço**: €18-96/pessoa
 - **Descrição**: Gastronomia portuguesa moderna com harmonização de vinhos atlânticos e vista panorâmica rooftop. Experiência gastronômica premium em restaurante premiado.
 - **Opções**:
-  - Prova 3 Vinhos + Visita: €18
-  - Harmonização Petiscos (4 pratos): €50
-  - Harmonização Sal na Adega (6 momentos): €70
-  - Sal Gastronomic Tasting Completo: €85
+  - Prova Bronze (3 Vinhos + Visita): €18
+  - Prova Gold (12 Vinhos + Visita): €45
+  - Harmonização Petiscos (6 vinhos + 4 petiscos): €70
+  - Harmonização Sal na Adega (6 vinhos + 6 pratos): €96
 - **Duração**: 2h-3h | **Grupo**: 2-20 pessoas
 
 #### 4. **Quinta do Seixo - Sogrape Douro Experience**
@@ -125,6 +125,12 @@
 - **Localização**: Cadaval, Lisboa
 - **Preço**: €18-96/pessoa
 - **Descrição**: Crie sua própria experiência com sommelier especializado escolhendo entre provas clássicas ou harmonizações gastronômicas personalizadas. Atendimento bespoke.
+- **Opções**:
+  - Prova Bronze (3 Vinhos + Visita): €18
+  - Prova Silver (6 Vinhos + Visita): €25
+  - Prova Gold (12 Vinhos + Visita): €45
+  - Special Editions (6 Vinhos Gamas Superiores): €65
+  - Harmonização Sal na Adega (6 vinhos + 6 pratos): €96
 - **Duração**: 60-120 min | **Grupo**: 2-40 pax
 - **Inclui**: Consulta sommelier, prova personalizada, harmonização com petiscos/almoço, loja
 
@@ -150,11 +156,16 @@
 - **Inclui**: Visita cooperativa histórica, prova 4-5 vinhos, tábua enchidos, desconto compras
 
 #### 17. **Malhadinha Nova – Ecolodge Vitivinícola**
-- **Localização**: Évora (Reguengos de Monsaraz), Alentejo
-- **Preço**: €55-120/pessoa
-- **Descrição**: Ecolodge inovador único que combina sustentabilidade com viticultura de qualidade. Tour pela propriedade ecológica com prova de vinhos premiados com vista para Alentejo.
-- **Duração**: 3h | **Grupo**: 2-15 pax
-- **Inclui**: Tour propriedade ecológica, prova 6 vinhos premiados, almoço produtos locais, acesso instalações
+- **Localização**: Albernoa, Beja, Alentejo
+- **Preço**: €30-125/pessoa
+- **Descrição**: Ecolodge inovador único que combina sustentabilidade com viticultura de qualidade. Visita guiada à propriedade e adega com prova de vinhos premiados.
+- **Opções**:
+  - Prova de 4 Vinhos (com visita): €30
+  - Prova de 5 Monocastas: €45
+  - Prova de 5 Vinhos Premium: €65
+  - Prova Wine Expert (com Enologia): €125
+- **Duração**: 1h30-3h | **Grupo**: 2-15 pax
+- **Inclui**: Visita guiada à propriedade e adega, prova de vinhos premiados, acesso instalações
 
 #### 18. **Quinta de Sanguinhal – Vinhos Artesanais**
 - **Localização**: Sanguinhal, Lisboa
@@ -296,8 +307,8 @@ O projeto é totalmente responsivo e otimizado para:
 
 ## 👥 Contato
 
-- **Email**: leomattheus95@gmail.com
-- **WhatsApp**: +351 935327289
+- **Email**: europawineexperience@gmail.com
+- **WhatsApp**: +351 935 327 289
 - **Localização**: Lisboa, Portugal
 
 ---

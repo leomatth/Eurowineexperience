@@ -37,15 +37,40 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Mock submission - simulate API call
-    setTimeout(() => {
-      toast({
-        title: "Mensagem enviada com sucesso!",
-        description: "Entraremos em contato em breve. Verifique seu email.",
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: 'c17637b0-5784-45aa-b946-6f78b24cef65',
+          subject: `Nova mensagem - ${formData.package || 'Contato Geral'}`,
+          from_name: formData.name,
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          package: formData.package,
+          message: formData.message,
+        }),
       });
-      setFormData({ name: '', email: '', phone: '', package: '', message: '' });
+      const data = await response.json();
+      if (data.success) {
+        toast({
+          title: "Mensagem enviada com sucesso!",
+          description: "Entraremos em contato em breve. Verifique seu email.",
+        });
+        setFormData({ name: '', email: '', phone: '', package: '', message: '' });
+      } else {
+        throw new Error('Falha no envio');
+      }
+    } catch {
+      toast({
+        title: "Erro ao enviar mensagem",
+        description: "Tente novamente ou entre em contato via WhatsApp.",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
 
   const openWhatsApp = () => {
@@ -113,7 +138,7 @@ const ContactSection = () => {
                       type="tel"
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="+55 XX XXXXX XXXX"
+                      placeholder="+351 XXX XXX XXX"
                       className="mt-2"
                     />
                   </div>

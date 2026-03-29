@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Star, MapPin, MessageCircle, Wifi, Coffee, Dumbbell, Phone as PhoneIcon } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../components/ui/card';
 import { Button } from '../components/ui/button';
@@ -14,6 +14,8 @@ const HospedagemPage = () => {
   const t = translations[language];
   const [activeCategory, setActiveCategory] = useState('all');
   const [selectedHotel, setSelectedHotel] = useState(null);
+
+  useEffect(() => { document.title = 'Hospedagem | EuroWineExperience'; }, []);
 
   const getCategoryBadge = (category) => {
     const categories = {

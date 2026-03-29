@@ -88,8 +88,7 @@ export const translations = {
       newsletterText: 'Receba ofertas exclusivas e novidades',
       emailPlaceholder: 'Seu e-mail',
       subscribe: 'Inscrever',
-      rights: 'Todos os direitos reservados.',
-      downloadSource: 'Código-fonte'
+      rights: 'Todos os direitos reservados.'
     },
     booking: {
       title: 'Reservar',
@@ -194,8 +193,7 @@ export const translations = {
       newsletterText: 'Receive exclusive offers and news',
       emailPlaceholder: 'Your email',
       subscribe: 'Subscribe',
-      rights: 'All rights reserved.',
-      downloadSource: 'Source code'
+      rights: 'All rights reserved.'
     },
     booking: {
       title: 'Book',
@@ -300,8 +298,7 @@ export const translations = {
       newsletterText: 'Recibe ofertas exclusivas y novedades',
       emailPlaceholder: 'Tu correo',
       subscribe: 'Suscribirse',
-      rights: 'Todos los derechos reservados.',
-      downloadSource: 'Código fuente'
+      rights: 'Todos los derechos reservados.'
     },
     booking: {
       title: 'Reservar',

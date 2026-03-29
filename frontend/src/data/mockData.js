@@ -88,7 +88,7 @@ export const packages = [
       "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTZ8MHwxfHNlYXJjaHwzfHx3aW5lJTIwdGFzdGluZ3xlbnwwfHx8fDE3NzA1NTEyNDR8MA&ixlib=rb-4.1.0&q=85"
     ],
     priceFrom: 18,
-    priceTo: 85,
+    priceTo: 96,
     currency: "€",
     duration: "2h-3h",
     groupSize: "2-20 pessoas",
@@ -100,10 +100,10 @@ export const packages = [
       "Reserva garantida"
     ],
     mealOptions: [
-      { name: "Prova 3 Vinhos + Visita", price: 18 },
-      { name: "Harmonização Petiscos (4 pratos)", price: 50 },
-      { name: "Harmonização Sal na Adega (6 momentos)", price: 70 },
-      { name: "Sal Gastronomic Tasting Completo", price: 85 }
+      { name: "Prova Bronze (3 Vinhos + Visita)", price: 18 },
+      { name: "Prova Gold (12 Vinhos + Visita)", price: 45 },
+      { name: "Harmonização Petiscos (6 vinhos + 4 petiscos)", price: 70 },
+      { name: "Harmonização Sal na Adega (6 vinhos + 6 pratos)", price: 96 }
     ]
   },
   {
@@ -550,14 +550,17 @@ export const packages = [
     groupSize: "2-40 pax",
     includes: [
       "Consulta com sommelier especializado",
-      "Prova personalizada (4-8 vinhos)",
+      "Prova personalizada (3-12 vinhos)",
       "Harmonização com petiscos ou almoço",
       "Acesso à loja de vinhos",
       "Material informativo exclusivo"
     ],
     mealOptions: [
-      { name: "Prova Personalizada + Petiscos", price: 18 },
-      { name: "Harmonização Almoço Premium", price: 96 }
+      { name: "Prova Bronze (3 Vinhos + Visita)", price: 18 },
+      { name: "Prova Silver (6 Vinhos + Visita)", price: 25 },
+      { name: "Prova Gold (12 Vinhos + Visita)", price: 45 },
+      { name: "Special Editions (6 Vinhos Gamas Superiores)", price: 65 },
+      { name: "Harmonização Sal na Adega (6 vinhos + 6 pratos)", price: 96 }
     ]
   },
   {
@@ -647,7 +650,7 @@ export const packages = [
   {
     id: 21,
     name: "Malhadinha Nova – Ecolodge Vitivinícola",
-    location: "Évora (Reguengos de Monsaraz)",
+    location: "Albernoa, Beja",
     region: "Alentejo",
     icon: "mountain",
     tagline: "Sustentabilidade & Vinhos",
@@ -655,21 +658,22 @@ export const packages = [
     shortDescription: "Lodge ecológico + tour sustentável + prova 6 vinhos premiados",
     fullDescription: "Experimente a inovadora Malhadinha Nova, um ecolodge único que combina sustentabilidade com viticultura de qualidade. Tour pela propriedade ecológica seguido de prova de seus vinhos premiados com vista para o Alentejo.",
     image: "https://q-xx.bstatic.com/xdata/images/hotel/max750/486612703.jpg?k=7dfe363327fbe1d81829b92c42a98908828bddce0894d587f7308ed796618df9&o=&a=839822",
-    priceFrom: 55,
-    priceTo: 120,
+    priceFrom: 30,
+    priceTo: 125,
     currency: "€",
-    duration: "3h",
+    duration: "1h30-3h",
     groupSize: "2-15 pax",
     includes: [
-      "Tour pela propriedade ecológica",
-      "Prova de 6 vinhos premiados",
+      "Visita guiada à propriedade e adega",
+      "Prova de vinhos premiados",
       "Explicação sobre sustentabilidade",
-      "Almoço com produtos locais",
       "Acesso às instalações do ecolodge"
     ],
     visitOptions: [
-      { name: "Prova + Petiscos", price: 55 },
-      { name: "Experiência Completa + Almoço Gourmet", price: 120 }
+      { name: "Prova de 4 Vinhos (com visita)", price: 30 },
+      { name: "Prova de 5 Monocastas", price: 45 },
+      { name: "Prova de 5 Vinhos Premium", price: 65 },
+      { name: "Prova Wine Expert (com Enologia)", price: 125 }
     ]
   },
   {
@@ -925,11 +929,12 @@ export const testimonials = [
 export const companyInfo = {
   name: "EuroWineExperience",
   tagline: "Enoturismo Premium em Portugal",
-  phone: "+55 21 998277135",
-  email: "mendozadagoulart@gmail.com",
-  whatsapp: "+5521998277135",
+  phone: "+351 935 327 289",
+  email: "europawineexperience@gmail.com",
+  whatsapp: "+351935327289",
   socialMedia: {
-    instagram: "https://www.instagram.com/eurowineexperiencie/",
+    instagram: "https://www.instagram.com/europawineexperience/",
+    linktree: "https://linktr.ee/eurowineexperience",
     facebook: "https://facebook.com/eurowineexperience",
     youtube: "https://youtube.com/@eurowineexperience"
   },
@@ -957,7 +962,7 @@ export const faqs = [
   {
     id: 3,
     question: "Posso personalizar meu pacote?",
-    answer: "Sim! Entre em contato via WhatsApp (+55 21 998277135) e nossos especialistas criarão uma experiência personalizada para suas preferências, incluindo vinícolas específicas e roteiros exclusivos."
+    answer: "Sim! Entre em contato via WhatsApp (+351 935 327 289) e nossos especialistas criarão uma experiência personalizada para suas preferências, incluindo vinícolas específicas e roteiros exclusivos."
   },
   {
     id: 4,

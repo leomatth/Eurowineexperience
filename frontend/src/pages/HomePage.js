@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Wine, MapPin, Clock, Users, ChevronDown, ChevronUp, Castle, Utensils, Grape, Map, Bus, Mountain, Church, Star, MessageCircle, Sparkles } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../components/ui/card';
 import { Button } from '../components/ui/button';
@@ -20,6 +20,8 @@ const HomePage = () => {
   const navigate = useNavigate();
   const [expandedPackage, setExpandedPackage] = useState(null);
   const [selectedPackage, setSelectedPackage] = useState(null);
+
+  useEffect(() => { document.title = 'EuroWineExperience — Enoturismo Premium em Portugal'; }, []);
 
   // Get only first 3 of each
   const firstThreePackages = packages.slice(0, 3);
@@ -88,7 +90,7 @@ const HomePage = () => {
     const message = encodeURIComponent(
       `Olá! Gostaria de reservar: ${accommodation.name} em ${accommodation.location}`
     );
-    window.open(`https://wa.me/5521998277135?text=${message}`, '_blank');
+    window.open(`https://wa.me/${companyInfo.whatsapp.replace(/\+/g, '')}?text=${message}`, '_blank');
   };
 
   return (
