@@ -1,14 +1,16 @@
-from fastapi import FastAPI, APIRouter
+from fastapi import FastAPI, APIRouter, HTTPException
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
+import re
 import logging
 from pathlib import Path
-from pydantic import BaseModel, Field, ConfigDict
+from pydantic import BaseModel, Field, ConfigDict, field_validator
 from typing import List
 import uuid
 from datetime import datetime, timezone
+from contextlib import asynccontextmanager
 
 
 ROOT_DIR = Path(__file__).parent.parent
@@ -28,14 +30,21 @@ logger = logging.getLogger(__name__)
 
 # MongoDB connection
 mongo_url = os.environ.get('MONGO_URL', '')
-if mongo_url:
-    client = AsyncIOMotorClient(mongo_url)
-    db = client[os.environ.get('DB_NAME', 'eurowine')]
-else:
-    db = None
+client = None
+db = None
 
-# Create the main app without a prefix
-app = FastAPI(docs_url=None, redoc_url=None)
+@asynccontextmanager
+async def lifespan(app):
+    global client, db
+    if mongo_url:
+        client = AsyncIOMotorClient(mongo_url)
+        db = client[os.environ.get('DB_NAME', 'eurowine')]
+    yield
+    if client:
+        client.close()
+
+# Create the main app
+app = FastAPI(docs_url=None, redoc_url=None, lifespan=lifespan)
 
 # Create a router with the /api prefix
 api_router = APIRouter(prefix="/api")
@@ -50,7 +59,15 @@ class StatusCheck(BaseModel):
     timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 class StatusCheckCreate(BaseModel):
-    client_name: str
+    client_name: str = Field(..., min_length=1, max_length=200)
+
+    @field_validator('client_name')
+    @classmethod
+    def validate_client_name(cls, v):
+        cleaned = re.sub(r'[^\w\s.\-@]', '', v.strip())
+        if not cleaned:
+            raise ValueError('Invalid client name')
+        return cleaned
 
 # Add root route directly to app for easier access
 @app.get("/")
@@ -65,7 +82,7 @@ async def api_root():
 @api_router.post("/status", response_model=StatusCheck)
 async def create_status_check(input: StatusCheckCreate):
     if not db:
-        return {"error": "Database not connected"}
+        raise HTTPException(status_code=503, detail="Database not connected")
     
     status_dict = input.model_dump()
     status_obj = StatusCheck(**status_dict)
@@ -80,7 +97,7 @@ async def create_status_check(input: StatusCheckCreate):
 @api_router.get("/status", response_model=List[StatusCheck])
 async def get_status_checks():
     if not db:
-        return []
+        raise HTTPException(status_code=503, detail="Database not connected")
     
     # Exclude MongoDB's _id field from the query results
     status_checks = await db.status_checks.find({}, {"_id": 0}).to_list(50)
@@ -102,8 +119,3 @@ app.add_middleware(
     allow_methods=["GET", "POST"],
     allow_headers=["Content-Type"],
 )
-
-@app.on_event("shutdown")
-async def shutdown_db_client():
-    if mongo_url:
-        client.close()
