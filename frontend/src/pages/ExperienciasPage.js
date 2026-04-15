@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Wine, MapPin, Clock, Users, Castle, Utensils, Grape, Map, Bus, Mountain, Church, MessageCircle, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../components/ui/card';
 import { Button } from '../components/ui/button';
@@ -12,9 +13,15 @@ import { optimizeImageUrl } from '../lib/utils';
 const ExperienciasPage = () => {
   const { language } = useLanguage();
   const t = translations[language];
+  const [searchParams] = useSearchParams();
   const [expandedPackage, setExpandedPackage] = useState(null);
-  const [filter, setFilter] = useState('all');
+  const [filter, setFilter] = useState(() => searchParams.get('filter') || 'all');
   const [activeRegion, setActiveRegion] = useState('all');
+
+  useEffect(() => {
+    const urlFilter = searchParams.get('filter');
+    if (urlFilter) setFilter(urlFilter);
+  }, [searchParams]);
   const [selectedPkg, setSelectedPkg] = useState(null);
   const [galleryIndex, setGalleryIndex] = useState(0);
 
@@ -40,6 +47,7 @@ const ExperienciasPage = () => {
       tour: 'bg-blue-100 text-blue-800',
       'city-tour': 'bg-green-100 text-green-800',
       'day-trip': 'bg-amber-100 text-amber-800',
+      package: 'bg-red-100 text-red-800',
     };
     return colors[category] || colors.winery;
   };
@@ -50,6 +58,7 @@ const ExperienciasPage = () => {
       tour: 'Tour Guiado',
       'city-tour': 'City Tour',
       'day-trip': 'Passeio 1 Dia',
+      package: 'Pacote',
     };
     return labels[category] || 'Experiência';
   };
@@ -78,6 +87,7 @@ const ExperienciasPage = () => {
     { value: 'tour', label: t.packages.filterTours || 'Tours' },
     { value: 'city-tour', label: t.packages.filterCityTour || 'City Tours' },
     { value: 'day-trip', label: t.packages.filterDayTrip || 'Passeios de 1 Dia' },
+    { value: 'package', label: 'Pacotes' },
   ];
 
   const regionFilters = [

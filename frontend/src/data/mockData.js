@@ -79,11 +79,12 @@ export const packages = [
     icon: "utensils",
     tagline: "Harmonização Gastronômica com Vista",
     category: "winery",
-    shortDescription: "Experiência gastronômica premium no restaurante Sal na Adega com harmonização de vinhos atlânticos e vista para os vinhedos.",
-    fullDescription: "O premiado restaurante Sal na Adega oferece gastronomia portuguesa moderna com foco em bacalhau e harmonizações perfeitas com vinhos AdegaMãe. Rooftop com vista panorâmica para as vinhas.",
-    image: "https://images.unsplash.com/photo-1558241665-89718b74c89c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1NzZ8MHwxfHNlYXJjaHwxfHx2aW5leWFyZCUyMHN1bnNldHxlbnwwfHx8fDE3NzA1NTEyNDB8MA&ixlib=rb-4.1.0&q=85",
+    featured: true,
+    shortDescription: "Experiência gastronômica premium na AdegaMãe em Torres Vedras com 5 programas de provas — do clássico ao harmonizado no restaurante Sal na Adega.",
+    fullDescription: "A AdegaMãe produz vinhos atlânticos únicos a apenas 55km de Lisboa, com influência directa da brisa marítima. Os programas de provas vão do Bronze (3 vinhos + visita, 18€) ao sofisticado Sal na Adega (6 vinhos + 6 pratos no restaurante rooftop, 96€). A Special Editions (65€) é ideal para conhecer as gamas superiores. Preços confirmados no site oficial adegamae.pt.",
+    image: "https://static.portugalbywine.com/media//MULTIMEDIA/FOTOS/3337/2625618433396c.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1763867641182-9ff4cfbcc389",
+      "https://adegamae.pt/wp-content/uploads/elementor/thumbs/img9-5c5dtgizx5j573f69uddffkdiefg659jyhocv1lj0igx8.jpg",
       "https://images.unsplash.com/photo-1627922206324-e9ab1667bd23",
       "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTZ8MHwxfHNlYXJjaHwzfHx3aW5lJTIwdGFzdGluZ3xlbnwwfHx8fDE3NzA1NTEyNDR8MA&ixlib=rb-4.1.0&q=85"
     ],
@@ -93,15 +94,17 @@ export const packages = [
     duration: "2h-3h",
     groupSize: "2-20 pessoas",
     includes: [
-      "Visita guiada à AdegaMãe",
-      "Degustação de vinhos atlânticos",
-      "Menu de harmonização gastronômica",
-      "Vista panorâmica rooftop",
-      "Reserva garantida"
+      "Visita guiada à AdegaMãe e vinhas atlânticas",
+      "Prova comentada de vinhos (3 a 12 vinhos conforme programa)",
+      "Opção de harmonização com petiscos ou refeição completa no Sal na Adega",
+      "Vista panorâmica rooftop para os vinhedos",
+      "Reserva garantida — preços oficiais adegamae.pt"
     ],
     mealOptions: [
-      { name: "Prova Bronze (3 Vinhos + Visita)", price: 18 },
-      { name: "Prova Gold (12 Vinhos + Visita)", price: 45 },
+      { name: "Bronze — Visita + 3 Vinhos", price: 18 },
+      { name: "Silver — Visita + 6 Vinhos", price: 25 },
+      { name: "Gold — Visita + 12 Vinhos", price: 45 },
+      { name: "Special Editions — 6 Vinhos Gamas Superiores", price: 65 },
       { name: "Harmonização Petiscos (6 vinhos + 4 petiscos)", price: 70 },
       { name: "Harmonização Sal na Adega (6 vinhos + 6 pratos)", price: 96 }
     ]
@@ -731,6 +734,147 @@ export const packages = [
       { name: "Prova Herança 4 Vinhos", wines: 4, price: 28 },
       { name: "Experiência Histórica + Almoço", wines: 6, price: 70 }
     ]
+  },
+  {
+    id: 24,
+    name: "Adega Cartuxa – Visita + Degustação Premium",
+    location: "Évora, Alentejo",
+    region: "Alentejo",
+    icon: "wine",
+    tagline: "Casa do Lendário Pêra-Manca",
+    category: "winery",
+    featured: true,
+    shortDescription: "Visite a histórica Adega Cartuxa em Évora e prove vinhos icônicos incluindo o lendário Pêra-Manca, um dos vinhos mais raros e exclusivos de Portugal.",
+    fullDescription: "A Adega Cartuxa, fundada em 1776, é uma das mais históricas de Portugal. Localizada em Évora, Património Mundial da UNESCO, oferece visitas guiadas às adegas e vinhas da Herdade de Valbom, degustações comentadas de seus vários rótulos e a possibilidade de provar o exclusivo Pêra-Manca — tinto e branco —, considerado um dos maiores vinhos portugueses de todos os tempos. Uma experiência para apreciadores exigentes.",
+    image: "https://images.unsplash.com/photo-1558670460-cad0c19b1840?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85",
+    gallery: [
+      "https://images.unsplash.com/photo-1765192681431-c91428e3cb27?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwyfHx2aW5leWFyZCUyMGxhbmRzY2FwZXxlbnwwfHx8fDE3NzA1NTEyNTR8MA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1694781558887-d84d9ba7603f?ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1701596744958-b494dcffe375?ixlib=rb-4.1.0&q=85"
+    ],
+    priceFrom: 20,
+    priceTo: 85,
+    currency: "€",
+    duration: "1h30-2h",
+    groupSize: "2-20 pessoas",
+    includes: [
+      "Visita guiada às adegas históricas e vinhas",
+      "Degustação comentada de 4-6 vinhos",
+      "Prova de rótulos exclusivos (opção Pêra-Manca)",
+      "Explicação sobre terroir alentejano e processo vinícola",
+      "Acesso à loja de vinhos com rótulos exclusivos"
+    ],
+    tastingOptions: [
+      { name: "Visita + Prova 4 Vinhos", wines: 4, price: 20 },
+      { name: "Prova Premium 6 Vinhos + Petiscos", wines: 6, price: 45 },
+      { name: "Experiência Pêra-Manca (vinhos exclusivos)", wines: "seleção premium", price: 85 }
+    ]
+  },
+  {
+    id: 25,
+    name: "Herdade do Esporão – Enoturismo Premium",
+    location: "Reguengos de Monsaraz, Alentejo",
+    region: "Alentejo",
+    icon: "grape",
+    tagline: "Estrela Michelin 2025 · Referência Mundial",
+    category: "winery",
+    featured: true,
+    shortDescription: "Visite a Herdade do Esporão — 2.500 ha de produção biológica, restaurante com Estrela Michelin 2025 e Wine Bar com provas a partir de 12€. Vinhas, adega e arte contemporânea.",
+    fullDescription: "A Herdade do Esporão é uma das propriedades vitivinícolas mais reconhecidas do mundo. Desde 1973 em Reguengos de Monsaraz, pratica agricultura biológica em 2.500 hectares, produz azeites premiados e vinhos exportados para mais de 70 países. O enoturismo inclui visita guiada pelas vinhas, Adega Monte Velho e Adega dos Lagares (onde provará 4 vinhos na versão Clássica, 30€/pessoa; ou 5 vinhos selecionados na Premium, 45€/pessoa). O Wine Bar está aberto todos os dias das 10h às 18h30 com provas individuais a partir de 12€. O restaurante, com Estrela Michelin e Estrela Verde Michelin 2025, serve menus sazonais com ingredientes das hortas biológicas. Preços oficiais em esporao.com.",
+    image: "https://esporao.com/media/pages/medialibrary/15fc92fd75-1728336821/turismo-edificio-20-1.jpg",
+    gallery: [
+      "https://esporao.com/media/pages/medialibrary/b83f793aac-1695406690/turismo_provas_winebar_he.png",
+      "https://esporao.com/media/pages/medialibrary/128f8c27b8-1775050662/dsc01101.jpg",
+      "https://images.unsplash.com/photo-1619525163217-996bd4c1eb92?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1NzZ8MHwxfHNlYXJjaHwyfHx2aW5leWFyZCUyMHN1bnNldHxlbnwwfHx8fDE3NzA1NTEyNDB8MA&ixlib=rb-4.1.0&q=85"
+    ],
+    priceFrom: 12,
+    priceTo: 95,
+    currency: "€",
+    duration: "2h (visita) / dia completo com restaurante",
+    groupSize: "2-20 pessoas",
+    includes: [
+      "Visita guiada pelas vinhas biológicas, Adega Monte Velho e Adega dos Lagares",
+      "Prova Clássica: Esporão Colheita Branco + Tinto + Reserva Branco + Tinto (4 vinhos)",
+      "Prova Premium: Reserva + Private Selection + Monovarietal (5 vinhos)",
+      "Wine Bar aberto 10h-18h30: provas de azeites, vinhos e tábuas de queijos",
+      "Restaurante Esporão — Estrela Michelin 2025 — menus sazonais com harmonização"
+    ],
+    tastingOptions: [
+      { name: "Wine Bar – Prova Brancos e Tintos", wines: 4, price: 22 },
+      { name: "Wine Bar – Tábua de Queijos e Enchidos", wines: "a partir de", price: 12 },
+      { name: "Visita + Prova Clássica (4 vinhos)", wines: 4, price: 30 },
+      { name: "Visita + Prova Premium (5 vinhos)", wines: 5, price: 45 },
+      { name: "Wine Bar – Prova Premium", wines: "seleção superior", price: 61 },
+      { name: "Restaurante — Menu Esporão I + Harmonização", wines: "harmonização completa", price: 67 },
+      { name: "Restaurante — Menu Esporão II + Harmonização", wines: "harmonização premium", price: 95 }
+    ]
+  },
+  {
+    id: 26,
+    name: "Portugal – Roteiro Enoturismo 3 Dias",
+    location: "Lisboa + Alentejo + Aveiro",
+    region: "Lisboa",
+    icon: "map",
+    tagline: "Lisboa · Alentejo · Aveiro com Motorista Privado",
+    category: "package",
+    isPromo: true,
+    shortDescription: "Roteiro exclusivo de 3 dias com motorista privado visitando as regiões vinícolas de Colares, Azeitão, Alentejo (Esporão + Cartuxa) e Aveiro/Bairrada. A partir de 2 pessoas.",
+    fullDescription: "Descubra o melhor do enoturismo português em 3 dias inesquecíveis. Dia 1: Lisboa e arredores com vinhos de Colares e Azeitão (José Maria da Fonseca). Dia 2: Alentejo premium com visitas à Herdade do Esporão e Adega Cartuxa (incluindo rótulos Pêra-Manca). Dia 3: Aveiro e Bairrada com passeio de moliceiro nos canais e degustação de espumantes. Transporte privativo, guia especializado e todos os almoços harmonizados incluídos.\n\nSe você gosta de Mendoza… vai se apaixonar por essa experiência 🇵🇹🍷",
+    image: "/images/turismo-edificio-20-1.jpg",
+    gallery: [
+      "/images/enoteca-02.png",
+      "https://images.unsplash.com/photo-1619525163217-996bd4c1eb92?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1NzZ8MHwxfHNlYXJjaHwyfHx2aW5leWFyZCUyMHN1bnNldHxlbnwwfHx8fDE3NzA1NTEyNDB8MA&ixlib=rb-4.1.0&q=85",
+      "/images/aveiro-tour-meio-dia3.jpg"
+    ],
+    priceFrom: 699,
+    currency: "€",
+    duration: "3 dias",
+    groupSize: "A partir de 2 pessoas",
+    includes: [
+      "🚗 Transporte privativo durante todo o roteiro",
+      "🍷 Todas as visitas e degustações (Colares, José Maria da Fonseca, Esporão, Cartuxa, Bairrada)",
+      "🍽️ Almoços harmonizados conforme roteiro",
+      "🗣️ Guia local especializado",
+      "🚤 Passeio de moliceiro nos canais de Aveiro"
+    ],
+    packageDays: [
+      {
+        day: 1,
+        title: "Lisboa – Vinhos & História",
+        departure: "09:00",
+        stops: [
+          { name: "Região de Colares", description: "Vinhos únicos em solos de areia próximos ao mar. Degustação de rótulos históricos." },
+          { name: "Almoço em Vinícola", description: "Menu típico com harmonização de vinhos da casa." },
+          { name: "Azeitão – José Maria da Fonseca", description: "Visita guiada + degustação numa das vinícolas mais tradicionais de Portugal." }
+        ],
+        price: 199
+      },
+      {
+        day: 2,
+        title: "Alentejo – Vinhos Premium",
+        departure: "08:30",
+        stops: [
+          { name: "Herdade do Esporão", description: "Visita + degustação premium. Referência mundial em vinhos portugueses." },
+          { name: "Almoço na Vinícola", description: "Menu harmonizado com vinhos da região." },
+          { name: "Adega Cartuxa", description: "Visita + degustação de vinhos icônicos incluindo rótulos Pêra-Manca." }
+        ],
+        price: 270
+      },
+      {
+        day: 3,
+        title: "Aveiro – Moliceiros & Espumantes da Bairrada",
+        departure: "09:00",
+        stops: [
+          { name: "Passeio de Moliceiro nos Canais de Aveiro", description: "Passeio pelos famosos canais de Aveiro nos tradicionais barcos moliceiros decorados — a 'Veneza portuguesa'." },
+          { name: "Bairrada – Visita a Vinícola", description: "Visita à vinícola tradicional. Degustação de vinhos e espumantes naturais." },
+          { name: "Almoço Regional", description: "Leitão da Bairrada com harmonização de espumantes locais." },
+          { name: "Caves de Espumantes", description: "Visita + degustação de espumantes premium da região." }
+        ],
+        price: 230
+      }
+    ],
+    paymentTerms: "Entrada de 30% para confirmação. Restante pago antes da viagem.",
+    observations: "Roteiro 100% personalizado. Reservas feitas no nome do cliente (sem necessidade de ingressos físicos). Horários e logística enviados previamente."
   }
 ];
 

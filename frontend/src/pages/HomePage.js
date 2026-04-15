@@ -13,6 +13,7 @@ import AboutSection from '../components/AboutSection';
 import TestimonialsSection from '../components/TestimonialsSection';
 import FAQSection from '../components/FAQSection';
 import ContactSection from '../components/ContactSection';
+import PromoPopup from '../components/PromoPopup';
 
 const HomePage = () => {
   const { language } = useLanguage();
@@ -23,8 +24,8 @@ const HomePage = () => {
 
   useEffect(() => { document.title = 'EuroWineExperience — Enoturismo Premium em Portugal'; }, []);
 
-  // Get only first 3 of each
-  const firstThreePackages = packages.slice(0, 3);
+  // Featured wineries shown on homepage (marked featured:true in mockData)
+  const featuredPackages = packages.filter((p) => p.featured);
   const firstThreeAccommodations = accommodations.slice(0, 3);
 
   const getIcon = (iconName) => {
@@ -47,7 +48,8 @@ const HomePage = () => {
       winery: 'bg-purple-100 text-purple-800',
       tour: 'bg-blue-100 text-blue-800',
       'city-tour': 'bg-green-100 text-green-800',
-      'day-trip': 'bg-amber-100 text-amber-800'
+      'day-trip': 'bg-amber-100 text-amber-800',
+      package: 'bg-red-100 text-red-800'
     };
     return colors[category] || colors.winery;
   };
@@ -57,7 +59,8 @@ const HomePage = () => {
       winery: 'Vinícola',
       tour: 'Tour Guiado',
       'city-tour': 'City Tour',
-      'day-trip': 'Passeio 1 Dia'
+      'day-trip': 'Passeio 1 Dia',
+      package: 'Pacote'
     };
     return labels[category] || 'Experiência';
   };
@@ -95,6 +98,7 @@ const HomePage = () => {
 
   return (
     <>
+      <PromoPopup />
       <HeroSection />
 
       {/* Experiences Section */}
@@ -111,9 +115,9 @@ const HomePage = () => {
             </p>
           </div>
 
-          {/* Packages Grid - First 3 */}
+          {/* Packages Grid - Featured (Cartuxa, AdegaMãe, Esporão) */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {firstThreePackages.map((pkg) => (
+            {featuredPackages.map((pkg) => (
               <Card
                 key={pkg.id}
                 className="overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg bg-white"
