@@ -35,9 +35,21 @@ const PromoPopup = () => {
       onClick={dismiss}
     >
       <div
-        className="relative bg-white rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden animate-fade-in"
+        className="relative bg-white rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden animate-fade-in max-h-[90vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
+        {/* Always-visible close button – anchored to the modal card, above the image */}
+        <button
+          onClick={dismiss}
+          aria-label="Fechar promoção"
+          className="absolute top-3 right-3 z-20 bg-black/55 hover:bg-black/75 active:bg-black/90 text-white rounded-full p-2 transition-colors touch-manipulation"
+        >
+          <X className="h-5 w-5" />
+        </button>
+
+        {/* Scrollable content */}
+        <div className="overflow-y-auto">
+
         {/* Header image */}
         <div className="relative h-52 overflow-hidden">
           <img
@@ -47,13 +59,6 @@ const PromoPopup = () => {
             loading="eager"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-          <button
-            onClick={dismiss}
-            aria-label="Fechar promoção"
-            className="absolute top-3 right-3 bg-black/40 hover:bg-black/60 text-white rounded-full p-1.5 transition-colors"
-          >
-            <X className="h-4 w-4" />
-          </button>
           <div className="absolute top-3 left-3">
             <Badge className="bg-red-600 text-white border-0 text-xs font-bold tracking-wide uppercase">
               🔥 Oferta Especial
@@ -135,6 +140,7 @@ const PromoPopup = () => {
             Não tenho interesse agora
           </button>
         </div>
+        </div>{/* end scrollable */}
       </div>
     </div>
   );

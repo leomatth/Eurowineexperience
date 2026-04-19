@@ -811,70 +811,69 @@ export const packages = [
   },
   {
     id: 26,
-    name: "Portugal – Roteiro Enoturismo 3 Dias",
-    location: "Lisboa + Alentejo + Aveiro",
+    name: "Portugal – Roteiro Enoturismo Premium",
+    location: "Lisboa + Setúbal + Alentejo + Região de Lisboa",
     region: "Lisboa",
     icon: "map",
-    tagline: "Lisboa · Alentejo · Aveiro com Motorista Privado",
+    tagline: "Lisboa · Setúbal · Alentejo · Região de Lisboa com Motorista Privado",
     category: "package",
     isPromo: true,
-    shortDescription: "Roteiro exclusivo de 3 dias com motorista privado visitando as regiões vinícolas de Colares, Azeitão, Alentejo (Esporão + Cartuxa) e Aveiro/Bairrada. A partir de 2 pessoas.",
-    fullDescription: "Descubra o melhor do enoturismo português em 3 dias inesquecíveis. Dia 1: Lisboa e arredores com vinhos de Colares e Azeitão (José Maria da Fonseca). Dia 2: Alentejo premium com visitas à Herdade do Esporão e Adega Cartuxa (incluindo rótulos Pêra-Manca). Dia 3: Aveiro e Bairrada com passeio de moliceiro nos canais e degustação de espumantes. Transporte privativo, guia especializado e todos os almoços harmonizados incluídos.\n\nSe você gosta de Mendoza… vai se apaixonar por essa experiência 🇵🇹🍷",
+    shortDescription: "Roteiro exclusivo de 3 dias com motorista privado visitando as regiões vinícolas de Colares, José Maria da Fonseca (Setúbal), Herdade do Esporão, Adega Cartuxa (Alentejo), Quinta das Murgas e AdegaMãe (Região de Lisboa). A partir de 2 pessoas.",
+    fullDescription: "Descubra o melhor do enoturismo português em 3 dias inesquecíveis. Dia 1: Lisboa e Setúbal com visita à Adega Regional de Colares (vinhos de areia com castas autóctones) e almoço + visita guiada na icónica José Maria da Fonseca em Azeitão. Dia 2: Alentejo premium com visitas à Herdade do Esporão e Adega Cartuxa (incluindo rótulos Pêra-Manca quando disponível). Dia 3: Região de Lisboa com passeio pela Quinta das Murgas em Bucelas e experiência completa na AdegaMãe em Torres Vedras. Van executiva privada, guia especializado (opcional) e todos os almoços harmonizados incluídos. 🇵🇹🍷",
     image: "/images/turismo-edificio-20-1.jpg",
     gallery: [
       "/images/enoteca-02.png",
       "https://images.unsplash.com/photo-1619525163217-996bd4c1eb92?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1NzZ8MHwxfHNlYXJjaHwyfHx2aW5leWFyZCUyMHN1bnNldHxlbnwwfHx8fDE3NzA1NTEyNDB8MA&ixlib=rb-4.1.0&q=85",
       "/images/aveiro-tour-meio-dia3.jpg"
     ],
-    priceFrom: 699,
+    priceFrom: 655,
     currency: "€",
     duration: "3 dias",
     groupSize: "A partir de 2 pessoas",
     includes: [
-      "🚗 Transporte privativo durante todo o roteiro",
-      "🍷 Todas as visitas e degustações (Colares, José Maria da Fonseca, Esporão, Cartuxa, Bairrada)",
-      "🍽️ Almoços harmonizados conforme roteiro",
-      "🗣️ Guia local especializado",
-      "🚤 Passeio de moliceiro nos canais de Aveiro"
+      "🚐 Transporte privado com motorista (van executiva até 8 pax) durante os 3 dias",
+      "🍷 Todas as visitas, provas e almoços harmonizados conforme roteiro",
+      "🗣️ Guia local especializado em enoturismo (opcional — +€45/pessoa)",
+      "🎟️ Reservas VIP em nome dos clientes",
+      "🛡️ Seguro de responsabilidade civil"
     ],
     packageDays: [
       {
         day: 1,
-        title: "Lisboa – Vinhos & História",
+        title: "Lisboa – Vinhos Históricos & Setúbal",
         departure: "09:00",
         stops: [
-          { name: "Região de Colares", description: "Vinhos únicos em solos de areia próximos ao mar. Degustação de rótulos históricos." },
-          { name: "Almoço em Vinícola", description: "Menu típico com harmonização de vinhos da casa." },
-          { name: "Azeitão – José Maria da Fonseca", description: "Visita guiada + degustação numa das vinícolas mais tradicionais de Portugal." }
+          { name: "Região de Colares", description: "Visita à Adega Regional de Colares — uma das regiões mais raras de Portugal: vinhos de areia com castas autóctones (Ramisco e Malvasia)." },
+          { name: "Almoço na José Maria da Fonseca (Azeitão)", description: "Experiência gastronómica portuguesa com harmonização de vinhos da casa." },
+          { name: "Visita Guiada – José Maria da Fonseca", description: "Tour pelas adegas históricas, museu e prova premium de uma das casas mais tradicionais de Portugal." }
         ],
-        price: 199
+        price: 185
       },
       {
         day: 2,
         title: "Alentejo – Vinhos Premium",
-        departure: "08:30",
+        departure: "08:00",
         stops: [
-          { name: "Herdade do Esporão", description: "Visita + degustação premium. Referência mundial em vinhos portugueses." },
-          { name: "Almoço na Vinícola", description: "Menu harmonizado com vinhos da região." },
-          { name: "Adega Cartuxa", description: "Visita + degustação de vinhos icônicos incluindo rótulos Pêra-Manca." }
+          { name: "Herdade do Esporão", description: "Visita completa + prova premium. Uma das referências mundiais dos vinhos portugueses." },
+          { name: "Almoço Gastronómico na Herdade", description: "Menu harmonizado com vinhos da região." },
+          { name: "Adega Cartuxa (Évora)", description: "Visita + degustação de vinhos icónicos (incluindo Pêra-Manca quando disponível)." }
         ],
-        price: 270
+        price: 255
       },
       {
         day: 3,
-        title: "Aveiro – Moliceiros & Espumantes da Bairrada",
+        title: "Região de Lisboa – Vinhos Atlânticos",
         departure: "09:00",
         stops: [
-          { name: "Passeio de Moliceiro nos Canais de Aveiro", description: "Passeio pelos famosos canais de Aveiro nos tradicionais barcos moliceiros decorados — a 'Veneza portuguesa'." },
-          { name: "Bairrada – Visita a Vinícola", description: "Visita à vinícola tradicional. Degustação de vinhos e espumantes naturais." },
-          { name: "Almoço Regional", description: "Leitão da Bairrada com harmonização de espumantes locais." },
-          { name: "Caves de Espumantes", description: "Visita + degustação de espumantes premium da região." }
+          { name: "Quinta das Murgas (Bucelas)", description: "Visita guiada à quinta familiar + passeio pelas vinhas. Prova de Arinto e vinhos brancos atlânticos de excelência." },
+          { name: "Almoço na AdegaMãe", description: "Almoço com vista + harmonização de vinhos." },
+          { name: "Visita + Prova na AdegaMãe (Torres Vedras)", description: "Experiência completa na moderna adega: prova de vinhos e espumantes." }
         ],
-        price: 230
+        price: 215
       }
     ],
-    paymentTerms: "Entrada de 30% para confirmação. Restante pago antes da viagem.",
-    observations: "Roteiro 100% personalizado. Reservas feitas no nome do cliente (sem necessidade de ingressos físicos). Horários e logística enviados previamente."
+    paymentTerms: "30% de sinal para confirmação. Restante 30 dias antes da viagem. Cancelamento gratuito até 45 dias antes.",
+    observations: "Roteiro 100% personalizado e flexível. Horários e local de pick-up enviados com 48h de antecedência. Possibilidade de ajustes conforme preferências dos clientes."
   }
 ];
 
