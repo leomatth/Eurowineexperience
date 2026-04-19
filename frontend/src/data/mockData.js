@@ -84,7 +84,7 @@ export const packages = [
     fullDescription: "A AdegaMãe produz vinhos atlânticos únicos a apenas 55km de Lisboa, com influência directa da brisa marítima. Os programas de provas vão do Bronze (3 vinhos + visita, 18€) ao sofisticado Sal na Adega (6 vinhos + 6 pratos no restaurante rooftop, 96€). A Special Editions (65€) é ideal para conhecer as gamas superiores. Preços confirmados no site oficial adegamae.pt.",
     image: "https://static.portugalbywine.com/media//MULTIMEDIA/FOTOS/3337/2625618433396c.jpg",
     gallery: [
-      "https://adegamae.pt/wp-content/uploads/elementor/thumbs/img9-5c5dtgizx5j573f69uddffkdiefg659jyhocv1lj0igx8.jpg",
+      "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?crop=entropy&cs=srgb&fm=jpg&w=800&q=80",
       "https://images.unsplash.com/photo-1627922206324-e9ab1667bd23",
       "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTZ8MHwxfHNlYXJjaHwzfHx3aW5lJTIwdGFzdGluZ3xlbnwwfHx8fDE3NzA1NTEyNDR8MA&ixlib=rb-4.1.0&q=85"
     ],

@@ -120,7 +120,7 @@ const HomePage = () => {
             {featuredPackages.map((pkg) => (
               <Card
                 key={pkg.id}
-                className="overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg bg-white"
+                className="overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg bg-white flex flex-col"
               >
                 {/* Package Image */}
                 <div className="relative h-64 overflow-hidden group">
