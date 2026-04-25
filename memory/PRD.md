@@ -61,11 +61,30 @@ Viajantes premium, casais, apreciadores de vinho — orçamento alto (€850+/pe
 
 ---
 
+---
+
+### [2026-04-25] — Landing Page /alentejo-1-dia
+
+**Arquivo criado:** `/app/frontend/src/pages/Alentejo1DiaPage.js`  
+**Rota adicionada em:** `/app/frontend/src/App.js`  
+**Rota:** `/alentejo-1-dia`  
+**Estrutura:** Idêntica à Pacote3DiasPage.js
+
+**Diferenças de conteúdo vs. /pacote-3-dias:**
+- Preço: €350 (vs €850)
+- Duração: 1 dia (08:00–20:00)
+- 2 vinícolas (Esporão + Cartuxa, vs 6)
+- Itinerário adaptado: 3 momentos do dia (Manhã/Almoço/Tarde) com labels de horário nos cards (vs "Dia 1/2/3")
+- Hero image: campo do Alentejo com lago (Unsplash amber/vermelho)
+- FAQ: 8 perguntas específicas do Alentejo
+- Quote visual break: "O Alentejo não se visita — sente-se."
+
+---
+
 ## Backlog / Próximas Páginas Sugeridas
 
 ### P0 (Alta Prioridade)
-- [ ] Landing page para o Pacote 1 Dia — Alentejo (/pacote-alentejo)
-- [ ] Landing page para o Pacote 1 Dia — Lisboa (/pacote-lisboa)
+- [ ] Landing page para o Pacote 1 Dia — Lisboa Atlântico (/lisboa-1-dia)
 
 ### P1 (Média Prioridade)
 - [ ] Página de confirmação/obrigado após reserva
