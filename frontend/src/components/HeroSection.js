@@ -17,7 +17,8 @@ const HeroSection = () => {
   };
 
   const openWhatsApp = () => {
-    window.open(`https://wa.me/${companyInfo.whatsapp.replace(/\+/g, '')}`, '_blank');
+    const message = encodeURIComponent('Olá! Gostaria de saber mais sobre as experiências de enoturismo em Portugal. Podem me ajudar?');
+    window.open(`https://wa.me/${companyInfo.whatsapp.replace(/\D/g, '')}?text=${message}`, '_blank', 'noopener,noreferrer');
   };
 
   return (

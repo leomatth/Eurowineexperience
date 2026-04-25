@@ -826,7 +826,7 @@ export const packages = [
       "https://images.unsplash.com/photo-1619525163217-996bd4c1eb92?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1NzZ8MHwxfHNlYXJjaHwyfHx2aW5leWFyZCUyMHN1bnNldHxlbnwwfHx8fDE3NzA1NTEyNDB8MA&ixlib=rb-4.1.0&q=85",
       "/images/aveiro-tour-meio-dia3.jpg"
     ],
-    priceFrom: 655,
+    priceFrom: 850,
     currency: "€",
     duration: "3 dias",
     groupSize: "A partir de 2 pessoas",
@@ -874,6 +874,70 @@ export const packages = [
     ],
     paymentTerms: "30% de sinal para confirmação. Restante 30 dias antes da viagem. Cancelamento gratuito até 45 dias antes.",
     observations: "Roteiro 100% personalizado e flexível. Horários e local de pick-up enviados com 48h de antecedência. Possibilidade de ajustes conforme preferências dos clientes."
+  },
+  {
+    id: 27,
+    name: "Alentejo Premium – Experiência de 1 Dia",
+    location: "Alentejo, saída de Lisboa",
+    region: "Alentejo",
+    icon: "wine",
+    tagline: "Saída de Lisboa com motorista privado",
+    category: "day-trip",
+    shortDescription: "Explore o Alentejo em um dia inesquecível visitando algumas das vinícolas mais prestigiadas de Portugal, com motorista privado, degustação premium e almoço gastronômico harmonizado.",
+    fullDescription: "Partida de Lisboa às 08:00 rumo ao coração do Alentejo. Visita completa e degustação premium na Herdade do Esporão, uma das referências mundiais dos vinhos portugueses. Almoço gastronômico harmonizado com vinhos da região. À tarde, visita à Adega Cartuxa em Évora, com degustação dos seus vinhos icônicos, incluindo o lendário Pêra-Manca quando disponível. Retorno a Lisboa ao final da tarde.",
+    image: "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?crop=entropy&cs=srgb&fm=jpg&q=85",
+    gallery: [
+      "https://images.unsplash.com/photo-1547595628-c61a29f496f0?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "https://images.unsplash.com/photo-1567529684892-09290a1b2d05?crop=entropy&cs=srgb&fm=jpg&q=85"
+    ],
+    priceFrom: 350,
+    currency: "€",
+    duration: "1 dia (full day)",
+    groupSize: "A partir de 2 pessoas",
+    includes: [
+      "🚐 Motorista privado (Lisboa ↔ Alentejo)",
+      "🍷 Visita completa + degustação premium na Herdade do Esporão",
+      "🍽️ Almoço gastronômico harmonizado com vinhos",
+      "🍷 Visita + degustação na Adega Cartuxa (Évora)",
+      "🎟️ Reservas em nome dos clientes"
+    ],
+    routeOptions: [
+      { name: "Full Day Alentejo Premium", price: 350, description: "Esporão + almoço + Cartuxa com motorista privado" },
+      { name: "Full Day + Upgrade Degustação VIP", price: 420, description: "Inclui Pêra-Manca e vinhos de reserva" }
+    ],
+    observations: "Experiência personalizável com upgrades de vinhos e serviços. Pick-up e drop-off em Lisboa."
+  },
+  {
+    id: 28,
+    name: "Vinhos Atlânticos – Experiência de 1 Dia",
+    location: "Região de Lisboa",
+    region: "Lisboa",
+    icon: "leaf",
+    tagline: "Região de Lisboa – vinhos frescos e paisagem atlântica",
+    category: "day-trip",
+    shortDescription: "Uma experiência elegante e leve focada nos vinhos frescos da Região de Lisboa, com visita à Quinta das Murgas em Bucelas e experiência completa na AdegaMãe em Torres Vedras.",
+    fullDescription: "Partida de Lisboa às 09:00 para uma jornada serena pelos vinhedos atlânticos. Na Quinta das Murgas (Bucelas), visita guiada à quinta familiar e degustação dos seus brancos atlânticos de excelência — a casta Arinto no seu melhor. Almoço com vista panorâmica na AdegaMãe, com harmonização de vinhos. À tarde, visita completa à AdegaMãe: prova de vinhos e espumantes numa das mais modernas adegas da Região de Lisboa.",
+    image: "https://images.unsplash.com/photo-1560493676-04071c5f467b?crop=entropy&cs=srgb&fm=jpg&q=85",
+    gallery: [
+      "https://images.unsplash.com/photo-1619525163217-996bd4c1eb92?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?crop=entropy&cs=srgb&fm=jpg&q=85"
+    ],
+    priceFrom: 290,
+    currency: "€",
+    duration: "1 dia (full day)",
+    groupSize: "A partir de 2 pessoas",
+    includes: [
+      "🚐 Motorista privado (Lisboa → Bucelas → Torres Vedras → Lisboa)",
+      "🌿 Visita guiada + degustação na Quinta das Murgas (Bucelas)",
+      "🍽️ Almoço na AdegaMãe com vista e harmonização",
+      "🍷 Visita + prova de vinhos e espumantes na AdegaMãe",
+      "🎟️ Reservas em nome dos clientes"
+    ],
+    routeOptions: [
+      { name: "Full Day Vinhos Atlânticos", price: 290, description: "Quinta das Murgas + almoço AdegaMãe + visita AdegaMãe" },
+      { name: "Full Day + Experiência Sal na Adega", price: 360, description: "Inclui o menu Sal na Adega da AdegaMãe" }
+    ],
+    observations: "Possibilidade de personalização sob medida. Pick-up e drop-off em Lisboa."
   }
 ];
 
@@ -1072,9 +1136,9 @@ export const testimonials = [
 export const companyInfo = {
   name: "EuroWineExperience",
   tagline: "Enoturismo Premium em Portugal",
-  phone: "+351 935 327 289",
+  phone: "+55 21 99827-7135",
   email: "europawineexperience@gmail.com",
-  whatsapp: "+351935327289",
+  whatsapp: "+5521998277135",
   socialMedia: {
     instagram: "https://www.instagram.com/europawineexperience/",
     linktree: "https://linktr.ee/eurowineexperience",

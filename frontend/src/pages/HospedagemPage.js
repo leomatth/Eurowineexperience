@@ -34,9 +34,11 @@ const HospedagemPage = () => {
 
   const openWhatsApp = (hotel) => {
     const message = encodeURIComponent(
-      `Olá! Gostaria de reservar: ${hotel.name} em ${hotel.location}`
+      `Olá! Tenho interesse em reservar o *${hotel.name}* (${hotel.stars}⭐), localizado em ${hotel.location}.\n` +
+      `Preço a partir de: ${hotel.currency}${hotel.pricePerNight}/noite\n\n` +
+      `Podem me ajudar com a reserva e disponibilidade?`
     );
-    window.open(`https://wa.me/${companyInfo.whatsapp.replace(/\+/g, '')}?text=${message}`, '_blank');
+    window.open(`https://wa.me/${companyInfo.whatsapp.replace(/\D/g, '')}?text=${message}`, '_blank', 'noopener,noreferrer');
   };
 
   const filteredAccommodations = accommodations.filter(

@@ -1,145 +1,242 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { X, MapPin, Clock, Users, Wine } from 'lucide-react';
+import { X, Check } from 'lucide-react';
 import { Button } from './ui/button';
-import { Badge } from './ui/badge';
-import { packages } from '../data/mockData';
-import { optimizeImageUrl } from '../lib/utils';
+import { companyInfo } from '../data/mockData';
+
+const PROMO_CARDS = [
+  {
+    id: 'pkg3d',
+    badge: '⭐ Mais Completo',
+    badgeClass: 'bg-amber-600',
+    highlight: true,
+    title: 'Experiência Completa de Vinhos – 3 Dias 🍷',
+    subtitle: 'Lisboa • Setúbal • Alentejo • Região de Lisboa',
+    description:
+      'Uma jornada exclusiva pelas regiões vinícolas mais prestigiadas de Portugal, com motorista privado, degustações premium e experiências gastronômicas selecionadas.',
+    highlights: [
+      'Motorista privado durante todo o roteiro',
+      'Esporão, Cartuxa, José Maria da Fonseca',
+      'Almoços harmonizados com vinhos',
+      'Experiência intimista e personalizada',
+    ],
+    price: '€850',
+    priceLabel: 'A partir de',
+    priceNote: 'por pessoa',
+    obs: 'O valor final pode variar de acordo com as degustações e experiências escolhidas.',
+    btnLabel: 'Ver experiência completa',
+    btnClass: 'bg-amber-600 hover:bg-amber-700 text-white',
+    type: 'navigate',
+    destination: '/experiencias?filter=package',
+  },
+  {
+    id: 'alentejo',
+    badge: '🍇 Full Day Premium',
+    badgeClass: 'bg-red-700',
+    highlight: false,
+    title: 'Alentejo Premium – Experiência de 1 Dia 🍇',
+    subtitle: 'Saída de Lisboa com motorista privado',
+    description:
+      'Explore o Alentejo em um dia inesquecível visitando algumas das vinícolas mais prestigiadas de Portugal.',
+    highlights: [
+      '08:00 — Saída de Lisboa',
+      'Herdade do Esporão — visita + degustação premium',
+      'Almoço gastronômico harmonizado',
+      'Adega Cartuxa (Évora) — vinhos icônicos',
+    ],
+    price: '€350',
+    priceLabel: 'A partir de',
+    priceNote: 'por pessoa',
+    obs: 'Experiência personalizável com upgrades de vinhos e serviços.',
+    btnLabel: 'Quero viver essa experiência',
+    btnClass: 'bg-red-700 hover:bg-red-800 text-white',
+    type: 'whatsapp',
+    waMessage: 'Olá! Tenho interesse no Alentejo Premium – Experiência de 1 Dia. Podem me dar mais informações?',
+  },
+  {
+    id: 'atlantico',
+    badge: '🌿 Full Day Especial',
+    badgeClass: 'bg-emerald-700',
+    highlight: false,
+    title: 'Vinhos Atlânticos – Experiência de 1 Dia 🌿',
+    subtitle: 'Região de Lisboa',
+    description:
+      'Uma experiência elegante e leve, focada nos vinhos frescos e na paisagem atlântica.',
+    highlights: [
+      '09:00 — Saída de Lisboa',
+      'Quinta das Murgas — vinhos brancos atlânticos',
+      'Almoço na AdegaMãe com vista e harmonização',
+      'AdegaMãe — visita + vinhos e espumantes',
+    ],
+    price: '€290',
+    priceLabel: 'A partir de',
+    priceNote: 'por pessoa',
+    obs: 'Possibilidade de personalização sob medida.',
+    btnLabel: 'Explorar experiência',
+    btnClass: 'bg-emerald-700 hover:bg-emerald-800 text-white',
+    type: 'whatsapp',
+    waMessage: 'Olá! Tenho interesse nos Vinhos Atlânticos – Experiência de 1 Dia. Podem me dar mais informações?',
+  },
+];
+
+const TRUST_ITEMS = [
+  'Transporte privado incluído',
+  'Vinícolas selecionadas com curadoria',
+  'Experiências personalizáveis',
+  'Atendimento próximo e exclusivo',
+];
 
 const PromoPopup = () => {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
 
-  const promoPkg = packages.find((p) => p.isPromo);
-
   useEffect(() => {
-    if (!promoPkg) return;
+    const seen = localStorage.getItem('ewe_promo_seen');
+    if (seen) return;
     const timer = setTimeout(() => setOpen(true), 1500);
     return () => clearTimeout(timer);
-  }, [promoPkg]);
+  }, []);
 
   const dismiss = () => {
+    localStorage.setItem('ewe_promo_seen', '1');
     setOpen(false);
   };
 
-  const handleView = () => {
-    setOpen(false);
-    navigate('/experiencias?filter=package');
+  const handleCardAction = (card) => {
+    dismiss();
+    if (card.type === 'navigate') {
+      navigate(card.destination);
+    } else {
+      const waNumber = companyInfo.whatsapp.replace(/\D/g, '');
+      window.open(
+        `https://wa.me/${waNumber}?text=${encodeURIComponent(card.waMessage)}`,
+        '_blank',
+        'noopener,noreferrer'
+      );
+    }
   };
 
-  if (!open || !promoPkg) return null;
+  if (!open) return null;
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 md:p-5 bg-black/65 backdrop-blur-sm"
       onClick={dismiss}
     >
       <div
-        className="relative bg-white rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden animate-fade-in max-h-[90vh] flex flex-col"
+        className="relative bg-white rounded-2xl shadow-2xl w-full max-w-5xl overflow-hidden max-h-[95vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Always-visible close button – anchored to the modal card, above the image */}
+        {/* Close */}
         <button
           onClick={dismiss}
-          aria-label="Fechar promoção"
-          className="absolute top-3 right-3 z-20 bg-black/55 hover:bg-black/75 active:bg-black/90 text-white rounded-full p-2 transition-colors touch-manipulation"
+          aria-label="Fechar"
+          className="absolute top-3 right-3 z-20 bg-black/50 hover:bg-black/70 active:bg-black/90 text-white rounded-full p-2 transition-colors touch-manipulation"
         >
           <X className="h-5 w-5" />
         </button>
 
-        {/* Scrollable content */}
+        {/* Scrollable body */}
         <div className="overflow-y-auto">
 
-        {/* Header image */}
-        <div className="relative h-52 overflow-hidden">
-          <img
-            src={optimizeImageUrl(promoPkg.image, 800, 75)}
-            alt={promoPkg.name}
-            className="w-full h-full object-cover"
-            loading="eager"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-          <div className="absolute top-3 left-3">
-            <Badge className="bg-red-600 text-white border-0 text-xs font-bold tracking-wide uppercase">
-              🔥 Oferta Especial
-            </Badge>
-          </div>
-          <div className="absolute bottom-3 left-4 right-4">
-            <h2 className="text-white font-bold text-xl leading-tight drop-shadow">
-              {promoPkg.name}
+          {/* Header */}
+          <div className="bg-gradient-to-br from-stone-900 via-red-950 to-stone-900 px-6 py-7 text-center">
+            <h2 className="text-white text-xl md:text-2xl lg:text-3xl font-bold tracking-tight leading-snug">
+              Experiências Exclusivas de Vinho em Portugal 🍷
             </h2>
-            <p className="text-red-200 text-sm mt-0.5">{promoPkg.tagline}</p>
+            <p className="text-stone-300 mt-2 text-xs md:text-sm max-w-2xl mx-auto leading-relaxed">
+              Roteiros cuidadosamente selecionados com motorista privado, vinícolas renomadas e experiências gastronômicas únicas.
+            </p>
           </div>
-        </div>
 
-        {/* Body */}
-        <div className="p-5">
-          <p className="text-gray-700 text-sm leading-relaxed mb-4">
-            {promoPkg.shortDescription}
-          </p>
-
-          {/* Day summary pills */}
-          {promoPkg.packageDays && (
-            <div className="flex flex-col gap-2 mb-4">
-              {promoPkg.packageDays.map((d) => (
-                <div key={d.day} className="flex items-start gap-2 bg-amber-50 rounded-lg px-3 py-2">
-                  <Wine className="h-4 w-4 text-red-700 mt-0.5 shrink-0" />
-                  <div>
-                    <span className="font-semibold text-xs text-red-800 uppercase tracking-wide">
-                      Dia {d.day}
-                    </span>
-                    <span className="text-gray-700 text-xs ml-1">— {d.title}</span>
-                    <span className="block text-gray-500 text-xs">{d.stops.map((s) => s.name).join(' · ')}</span>
-                  </div>
-                  <span className="ml-auto text-red-700 font-bold text-sm shrink-0">€{d.price}</span>
+          {/* Cards */}
+          <div className="p-4 md:p-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+            {PROMO_CARDS.map((card) => (
+              <div
+                key={card.id}
+                className={`flex flex-col rounded-xl border overflow-hidden shadow-sm transition-shadow hover:shadow-lg ${
+                  card.highlight
+                    ? 'border-amber-400 ring-2 ring-amber-400/40'
+                    : 'border-stone-200'
+                }`}
+              >
+                {/* Badge strip */}
+                <div className={`${card.badgeClass} text-white text-xs font-bold uppercase tracking-widest px-4 py-2 text-center`}>
+                  {card.badge}
                 </div>
+
+                {/* Card content */}
+                <div className="flex flex-col flex-1 p-4">
+                  {/* Title + subtitle */}
+                  <div className="mb-3">
+                    <h3 className={`font-bold text-sm md:text-base leading-snug ${card.highlight ? 'text-amber-800' : 'text-stone-800'}`}>
+                      {card.title}
+                    </h3>
+                    <p className="text-xs text-stone-500 mt-0.5">{card.subtitle}</p>
+                  </div>
+
+                  <p className="text-stone-600 text-xs leading-relaxed mb-3">{card.description}</p>
+
+                  {/* Highlights */}
+                  <ul className="flex flex-col gap-1.5 mb-3">
+                    {card.highlights.map((h) => (
+                      <li key={h} className="flex items-start gap-2 text-xs text-stone-700">
+                        <Check className="h-3.5 w-3.5 text-red-600 shrink-0 mt-0.5" />
+                        {h}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Spacer — empurra preço+botão para o fundo */}
+                  <div className="flex-1" />
+
+                  {/* Price block */}
+                  <div className={`rounded-lg px-3 py-2.5 text-center mb-3 ${card.highlight ? 'bg-amber-50 border border-amber-200' : 'bg-stone-50 border border-stone-200'}`}>
+                    <p className={`text-xs ${card.highlight ? 'text-amber-700' : 'text-stone-500'}`}>{card.priceLabel}</p>
+                    <p className={`text-2xl font-extrabold leading-tight ${card.highlight ? 'text-amber-800' : 'text-red-800'}`}>
+                      {card.price}
+                    </p>
+                    <p className="text-xs text-stone-500">{card.priceNote}</p>
+                  </div>
+
+                  <Button
+                    onClick={() => handleCardAction(card)}
+                    className={`w-full font-semibold text-sm h-auto py-2.5 rounded-lg shadow mb-2 ${card.btnClass}`}
+                  >
+                    {card.btnLabel}
+                  </Button>
+
+                  <p className="text-xs text-stone-400 text-center italic leading-relaxed">{card.obs}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Trust strip */}
+          <div className="border-t border-stone-100 bg-stone-50 px-5 py-4">
+            <p className="text-center text-xs font-semibold text-stone-500 uppercase tracking-wider mb-3">
+              Por que escolher a Eurowine Experience?
+            </p>
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-1.5">
+              {TRUST_ITEMS.map((item) => (
+                <span key={item} className="flex items-center gap-1.5 text-xs text-stone-600">
+                  <Check className="h-3.5 w-3.5 text-emerald-600 shrink-0" />
+                  {item}
+                </span>
               ))}
             </div>
-          )}
-
-          {/* Meta info */}
-          <div className="flex flex-wrap gap-3 mb-5 text-xs text-gray-600">
-            <span className="flex items-center gap-1">
-              <MapPin className="h-3.5 w-3.5 text-red-600" />
-              {promoPkg.location}
-            </span>
-            <span className="flex items-center gap-1">
-              <Clock className="h-3.5 w-3.5 text-red-600" />
-              {promoPkg.duration}
-            </span>
-            <span className="flex items-center gap-1">
-              <Users className="h-3.5 w-3.5 text-red-600" />
-              {promoPkg.groupSize}
-            </span>
           </div>
 
-          {/* Price + CTAs */}
-          <div className="flex items-center gap-3">
-            <div className="flex-1 bg-gradient-to-r from-red-50 to-amber-50 rounded-xl px-4 py-3">
-              <p className="text-xs text-gray-500">Valor total por pessoa</p>
-              <p className="text-2xl font-bold text-red-800">
-                {promoPkg.currency}{promoPkg.priceFrom}
-                <span className="text-sm font-normal text-gray-500">/pessoa</span>
-              </p>
-              {promoPkg.paymentTerms && (
-                <p className="text-xs text-gray-500 mt-0.5">{promoPkg.paymentTerms}</p>
-              )}
-            </div>
-            <Button
-              onClick={handleView}
-              className="bg-red-700 hover:bg-red-800 text-white font-semibold px-5 py-3 h-auto rounded-xl shadow-lg"
+          {/* Dismiss link */}
+          <div className="text-center py-3">
+            <button
+              onClick={dismiss}
+              className="text-xs text-stone-400 hover:text-stone-600 transition-colors"
             >
-              Ver Pacote
-            </Button>
+              Não tenho interesse agora
+            </button>
           </div>
 
-          <button
-            onClick={dismiss}
-            className="w-full mt-3 text-xs text-gray-400 hover:text-gray-600 transition-colors"
-          >
-            Não tenho interesse agora
-          </button>
-        </div>
         </div>{/* end scrollable */}
       </div>
     </div>

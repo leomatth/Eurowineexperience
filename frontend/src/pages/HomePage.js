@@ -91,9 +91,11 @@ const HomePage = () => {
 
   const handleAccommodationBooking = (accommodation) => {
     const message = encodeURIComponent(
-      `Olá! Gostaria de reservar: ${accommodation.name} em ${accommodation.location}`
+      `Olá! Tenho interesse em reservar o *${accommodation.name}* (${accommodation.stars}⭐), localizado em ${accommodation.location}.\n` +
+      `Preço a partir de: ${accommodation.currency}${accommodation.pricePerNight}/noite\n\n` +
+      `Podem me ajudar com a reserva e disponibilidade?`
     );
-    window.open(`https://wa.me/${companyInfo.whatsapp.replace(/\+/g, '')}?text=${message}`, '_blank');
+    window.open(`https://wa.me/${companyInfo.whatsapp.replace(/\D/g, '')}?text=${message}`, '_blank', 'noopener,noreferrer');
   };
 
   return (

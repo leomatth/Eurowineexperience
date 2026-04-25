@@ -65,9 +65,12 @@ const ExperienciasPage = () => {
 
   const openWhatsApp = (pkg) => {
     const message = encodeURIComponent(
-      `Olá! Gostaria de reservar: ${pkg.name} (${pkg.location}) - a partir de ${pkg.currency}${pkg.priceFrom}`
+      `Olá! Tenho interesse em reservar a experiência *${pkg.name}* em ${pkg.location}.\n` +
+      `Duração: ${pkg.duration} | Grupo: ${pkg.groupSize}\n` +
+      `Preço a partir de: ${pkg.currency}${pkg.priceFrom}/pessoa\n\n` +
+      `Podem me dar mais informações e disponibilidade?`
     );
-    window.open(`https://wa.me/${companyInfo.whatsapp.replace(/\+/g, '')}?text=${message}`, '_blank');
+    window.open(`https://wa.me/${companyInfo.whatsapp.replace(/\D/g, '')}?text=${message}`, '_blank', 'noopener,noreferrer');
   };
 
   const openDetail = (pkg) => {

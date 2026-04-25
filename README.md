@@ -79,7 +79,40 @@
 - **Duração**: 90 min | **Grupo**: 2-30 pax
 - **Inclui**: Tour completo, prova selecionada, acesso à loja, panorâmica do vale
 
-#### 7. **Quinta da Pacheca – Visita + Prova 4 vinhos**
+#### 24. **Adega Cartuxa – Évora** ⭐ *Featured*
+- **Localização**: Évora, Alentejo
+- **Categoria**: Vinícola
+- **Preço**: a partir de €20/pessoa
+- **Descrição**: Uma das vinícolas mais icônicas do Alentejo, lar do lendário Pêra-Manca. Visita guiada e degustação dos rótulos mais premiados de Portugal.
+
+#### 25. **Herdade do Esporão – Reguengos** ⭐ *Featured*
+- **Localização**: Reguengos de Monsaraz, Alentejo
+- **Categoria**: Vinícola
+- **Preço**: a partir de €12/pessoa
+- **Descrição**: Referência mundial dos vinhos portugueses. Wine Bar, visitas clássicas e premium, restaurante premiado com menus harmonizados.
+
+---
+
+## 🗺️ Pacotes & Experiências Full Day
+
+#### 26. **Portugal – Roteiro Enoturismo Premium (3 Dias)**
+- **Categoria**: Pacote | **Preço**: a partir de €850/pessoa
+- **Roteiro**: Lisboa + Setúbal + Alentejo + Região de Lisboa
+- **Inclui**: Motorista privado 3 dias, todas as visitas e almoços harmonizados, reservas VIP
+- **Dias**:
+  - Dia 1: Região de Colares + José Maria da Fonseca (Azeitão) — €185
+  - Dia 2: Herdade do Esporão + Adega Cartuxa (Évora) — €255
+  - Dia 3: Quinta das Murgas + AdegaMãe (Torres Vedras) — €215
+
+#### 27. **Alentejo Premium – Experiência de 1 Dia**
+- **Categoria**: Passeio de 1 Dia | **Preço**: a partir de €350/pessoa
+- **Roteiro**: Saída de Lisboa às 08:00 → Herdade do Esporão → Almoço harmonizado → Adega Cartuxa (Évora)
+- **Inclui**: Motorista privado, visita + degustação premium em 2 vinícolas, almoço gastronômico
+
+#### 28. **Vinhos Atlânticos – Experiência de 1 Dia**
+- **Categoria**: Passeio de 1 Dia | **Preço**: a partir de €290/pessoa
+- **Roteiro**: Saída de Lisboa às 09:00 → Quinta das Murgas (Bucelas) → Almoço na AdegaMãe → AdegaMãe (Torres Vedras)
+- **Inclui**: Motorista privado, visita guiada + degustação, almoço com vista e harmonização
 - **Localização**: Lamego, Douro, Porto
 - **Preço**: €38-65/pessoa
 - **Descrição**: Explore os lagares antigos preservados com prova de 2 DOC Douro + 2 Porto. Experiência autêntica em edifícios históricos no coração do Douro.
@@ -308,7 +341,7 @@ O projeto é totalmente responsivo e otimizado para:
 ## 👥 Contato
 
 - **Email**: europawineexperience@gmail.com
-- **WhatsApp**: +351 935 327 289
+- **WhatsApp**: +55 21 99827-7135
 - **Localização**: Lisboa, Portugal
 
 ---

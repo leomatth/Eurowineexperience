@@ -74,10 +74,8 @@ const ContactSection = () => {
   };
 
   const openWhatsApp = () => {
-    const message = encodeURIComponent(
-      `Olá! Gostaria de saber mais sobre os pacotes de enoturismo em Portugal.`
-    );
-    window.open(`https://wa.me/${companyInfo.whatsapp.replace(/\+/g, '')}?text=${message}`, '_blank');
+    const message = encodeURIComponent('Olá! Gostaria de saber mais sobre os pacotes de enoturismo em Portugal. Podem me ajudar?');
+    window.open(`https://wa.me/${companyInfo.whatsapp.replace(/\D/g, '')}?text=${message}`, '_blank', 'noopener,noreferrer');
   };
 
   return (
