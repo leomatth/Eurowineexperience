@@ -91,14 +91,11 @@ const PromoPopup = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const seen = localStorage.getItem('ewe_promo_seen');
-    if (seen) return;
     const timer = setTimeout(() => setOpen(true), 1500);
     return () => clearTimeout(timer);
   }, []);
 
   const dismiss = () => {
-    localStorage.setItem('ewe_promo_seen', '1');
     setOpen(false);
   };
 
