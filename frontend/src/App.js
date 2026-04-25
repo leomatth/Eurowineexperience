@@ -12,6 +12,7 @@ import HospedagemPage from "@/pages/HospedagemPage";
 import AboutPage from "@/pages/AboutPage";
 import Pacote3DiasPage from "@/pages/Pacote3DiasPage";
 import Alentejo1DiaPage from "@/pages/Alentejo1DiaPage";
+import Lisboa1DiaPage from "@/pages/Lisboa1DiaPage";
 
 /** Scroll to top on route change; scroll to hash section when navigating via state */
 function ScrollManager() {
@@ -46,6 +47,7 @@ function App() {
               <Route path="/sobre" element={<AboutPage />} />
               <Route path="/pacote-3-dias" element={<Pacote3DiasPage />} />
               <Route path="/alentejo-1-dia" element={<Alentejo1DiaPage />} />
+              <Route path="/lisboa-1-dia" element={<Lisboa1DiaPage />} />
             </Routes>
           </main>
           <Footer />
