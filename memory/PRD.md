@@ -83,8 +83,32 @@ Viajantes premium, casais, apreciadores de vinho — orçamento alto (€850+/pe
 
 ## Backlog / Próximas Páginas Sugeridas
 
-### P0 (Alta Prioridade)
-- [ ] Landing page para o Pacote 1 Dia — Lisboa Atlântico (/lisboa-1-dia)
+### [2026-04-25] — Landing Page /lisboa-1-dia
+
+**Arquivo criado:** `/app/frontend/src/pages/Lisboa1DiaPage.js`  
+**Rota adicionada em:** `/app/frontend/src/App.js`  
+**Rota:** `/lisboa-1-dia`  
+**Estrutura:** Idêntica às duas anteriores
+
+**Diferenças de conteúdo vs. páginas anteriores:**
+- Preço: €290 (o mais acessível da série)
+- Duração: 1 dia (09:00–18:00)
+- 2 vinícolas: Quinta das Murgas (Bucelas) + AdegaMãe (Torres Vedras)
+- Tema: Vinhos brancos atlânticos — foco em frescura e acessibilidade
+- Hero gradient: emerald/green/teal (verde atlântico, diferente dos outros dois)
+- Itinerário 3 momentos: Manhã (esmeralda), Almoço (teal), Tarde (verde escuro)
+- WhyUs: inclui "ideal para casais", "perfeito para iniciantes", "melhor custo-benefício"
+- Quote: "Os vinhos brancos atlânticos são o segredo mais fresco de Portugal."
+
+---
+
+## Resumo das 3 Landing Pages Criadas
+
+| Página | Rota | Preço | Vinícolas | Duração |
+|--------|------|-------|-----------|---------|
+| Pacote 3 Dias | /pacote-3-dias | €850/pax | Colares, JMF, Esporão, Cartuxa, Murgas, AdegaMãe | 3 dias |
+| Alentejo 1 Dia | /alentejo-1-dia | €350/pax | Herdade do Esporão + Adega Cartuxa | 1 dia |
+| Lisboa Atlântico | /lisboa-1-dia | €290/pax | Quinta das Murgas + AdegaMãe | 1 dia |
 
 ### P1 (Média Prioridade)
 - [ ] Página de confirmação/obrigado após reserva
