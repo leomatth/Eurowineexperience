@@ -121,30 +121,28 @@ const PromoPopup = () => {
       onClick={dismiss}
     >
       <div
-        className="relative bg-white rounded-2xl shadow-2xl w-full max-w-5xl overflow-hidden max-h-[95vh] flex flex-col"
+        className="bg-white rounded-2xl shadow-2xl w-full max-w-5xl max-h-[95vh] flex flex-col overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close */}
-        <button
-          onClick={dismiss}
-          aria-label="Fechar"
-          className="absolute top-3 right-3 z-20 bg-black/50 hover:bg-black/70 active:bg-black/90 text-white rounded-full p-2 transition-colors touch-manipulation"
-        >
-          <X className="h-5 w-5" />
-        </button>
+        {/* Header com botão fechar — fora do scroll, nunca coberto no iOS */}
+        <div className="flex-none relative bg-gradient-to-br from-stone-900 via-red-950 to-stone-900 px-6 py-7 text-center">
+          <button
+            onClick={dismiss}
+            aria-label="Fechar"
+            className="absolute top-3 right-3 bg-white/20 hover:bg-white/35 active:bg-white/50 text-white rounded-full p-2 transition-colors touch-manipulation"
+          >
+            <X className="h-5 w-5" />
+          </button>
+          <h2 className="text-white text-xl md:text-2xl lg:text-3xl font-bold tracking-tight leading-snug">
+            Experiências Exclusivas de Vinho em Portugal 🍷
+          </h2>
+          <p className="text-stone-300 mt-2 text-xs md:text-sm max-w-2xl mx-auto leading-relaxed">
+            Roteiros cuidadosamente selecionados com motorista privado, vinícolas renomadas e experiências gastronômicas únicas.
+          </p>
+        </div>
 
         {/* Scrollable body */}
-        <div className="overflow-y-auto">
-
-          {/* Header */}
-          <div className="bg-gradient-to-br from-stone-900 via-red-950 to-stone-900 px-6 py-7 text-center">
-            <h2 className="text-white text-xl md:text-2xl lg:text-3xl font-bold tracking-tight leading-snug">
-              Experiências Exclusivas de Vinho em Portugal 🍷
-            </h2>
-            <p className="text-stone-300 mt-2 text-xs md:text-sm max-w-2xl mx-auto leading-relaxed">
-              Roteiros cuidadosamente selecionados com motorista privado, vinícolas renomadas e experiências gastronômicas únicas.
-            </p>
-          </div>
+        <div className="overflow-y-auto overscroll-contain flex-1">
 
           {/* Cards */}
           <div className="p-4 md:p-6 grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -162,8 +160,8 @@ const PromoPopup = () => {
                   {card.badge}
                 </div>
 
-                {/* Card content */}
-                <div className="flex flex-col flex-1 p-4">
+                {/* Card content — cresce para preencher, sem preço/botão */}
+                <div className="flex flex-col flex-1 p-4 pb-0">
                   {/* Title + subtitle */}
                   <div className="mb-3">
                     <h3 className={`font-bold text-sm md:text-base leading-snug ${card.highlight ? 'text-amber-800' : 'text-stone-800'}`}>
@@ -175,7 +173,7 @@ const PromoPopup = () => {
                   <p className="text-stone-600 text-xs leading-relaxed mb-3">{card.description}</p>
 
                   {/* Highlights */}
-                  <ul className="flex flex-col gap-1.5 mb-3">
+                  <ul className="flex flex-col gap-1.5">
                     {card.highlights.map((h) => (
                       <li key={h} className="flex items-start gap-2 text-xs text-stone-700">
                         <Check className="h-3.5 w-3.5 text-red-600 shrink-0 mt-0.5" />
@@ -183,11 +181,10 @@ const PromoPopup = () => {
                       </li>
                     ))}
                   </ul>
+                </div>
 
-                  {/* Spacer — empurra preço+botão para o fundo */}
-                  <div className="flex-1" />
-
-                  {/* Price block */}
+                {/* Price block — fora do flex-1, sempre na mesma posição */}
+                <div className="px-4 pt-4">
                   <div className={`rounded-lg px-3 py-2.5 text-center mb-3 ${card.highlight ? 'bg-amber-50 border border-amber-200' : 'bg-stone-50 border border-stone-200'}`}>
                     <p className={`text-xs ${card.highlight ? 'text-amber-700' : 'text-stone-500'}`}>{card.priceLabel}</p>
                     <p className={`text-2xl font-extrabold leading-tight ${card.highlight ? 'text-amber-800' : 'text-red-800'}`}>
@@ -198,11 +195,14 @@ const PromoPopup = () => {
 
                   <Button
                     onClick={() => handleCardAction(card)}
-                    className={`w-full font-semibold text-sm h-auto py-2.5 rounded-lg shadow mb-2 ${card.btnClass}`}
+                    className={`w-full font-semibold text-sm h-auto py-2.5 rounded-lg shadow ${card.btnClass}`}
                   >
                     {card.btnLabel}
                   </Button>
+                </div>
 
+                {/* Obs — altura mínima fixa para não variar entre cards */}
+                <div className="px-4 pt-2 pb-4 min-h-[2.75rem] flex items-start justify-center">
                   <p className="text-xs text-stone-400 text-center italic leading-relaxed">{card.obs}</p>
                 </div>
               </div>

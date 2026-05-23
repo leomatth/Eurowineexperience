@@ -167,7 +167,7 @@ const ExperienciasPage = () => {
             {filteredPackages.map((pkg) => (
               <Card
                 key={pkg.id}
-                className="overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg bg-white cursor-pointer"
+                className="overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg bg-white cursor-pointer flex flex-col"
                 onClick={() => openDetail(pkg)}
               >
                 <div className="relative h-64 overflow-hidden group">
@@ -226,7 +226,7 @@ const ExperienciasPage = () => {
                   </div>
                 </CardContent>
 
-                <CardFooter className="flex gap-3">
+                <CardFooter className="flex gap-3 mt-auto">
                   <Button
                     onClick={(e) => { e.stopPropagation(); openDetail(pkg); }}
                     className="flex-1 bg-red-700 hover:bg-red-800 text-white font-semibold py-6"
