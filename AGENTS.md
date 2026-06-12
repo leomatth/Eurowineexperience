@@ -1,5 +1,3 @@
-# EuroWineExperience — Agent Instructions
-
 ## Project overview
 React SPA for a premium wine-tourism company in Portugal. All data is static (no API/backend). Deployed on Vercel; the `api/` folder contains a Python (Flask) stub currently unused.
 

@@ -6,58 +6,10 @@ import { companyInfo } from '../data/mockData';
 
 const PROMO_CARDS = [
   {
-    id: 'pkg3d',
-    badge: '⭐ Mais Completo',
-    badgeClass: 'bg-amber-600',
-    highlight: true,
-    title: 'Experiência Completa de Vinhos – 3 Dias 🍷',
-    subtitle: 'Lisboa • Setúbal • Alentejo • Região de Lisboa',
-    description:
-      'Uma jornada exclusiva pelas regiões vinícolas mais prestigiadas de Portugal, com motorista privado, degustações premium e experiências gastronômicas selecionadas.',
-    highlights: [
-      'Motorista privado durante todo o roteiro',
-      'Esporão, Cartuxa, José Maria da Fonseca',
-      'Almoços harmonizados com vinhos',
-      'Experiência intimista e personalizada',
-    ],
-    price: '€850',
-    priceLabel: 'A partir de',
-    priceNote: 'por pessoa',
-    obs: 'O valor final pode variar de acordo com as degustações e experiências escolhidas.',
-    btnLabel: 'Ver experiência completa',
-    btnClass: 'bg-amber-600 hover:bg-amber-700 text-white',
-    type: 'navigate',
-    destination: '/experiencias?filter=package',
-  },
-  {
-    id: 'alentejo',
-    badge: '🍇 Full Day Premium',
-    badgeClass: 'bg-red-700',
-    highlight: false,
-    title: 'Alentejo Premium – Experiência de 1 Dia 🍇',
-    subtitle: 'Saída de Lisboa com motorista privado',
-    description:
-      'Explore o Alentejo em um dia inesquecível visitando algumas das vinícolas mais prestigiadas de Portugal.',
-    highlights: [
-      '08:00 — Saída de Lisboa',
-      'Herdade do Esporão — visita + degustação premium',
-      'Almoço gastronômico harmonizado',
-      'Adega Cartuxa (Évora) — vinhos icônicos',
-    ],
-    price: '€350',
-    priceLabel: 'A partir de',
-    priceNote: 'por pessoa',
-    obs: 'Experiência personalizável com upgrades de vinhos e serviços.',
-    btnLabel: 'Quero viver essa experiência',
-    btnClass: 'bg-red-700 hover:bg-red-800 text-white',
-    type: 'whatsapp',
-    waMessage: 'Olá! Tenho interesse no Alentejo Premium – Experiência de 1 Dia. Podem me dar mais informações?',
-  },
-  {
     id: 'atlantico',
     badge: '🌿 Full Day Especial',
     badgeClass: 'bg-emerald-700',
-    highlight: false,
+    highlight: true,
     title: 'Vinhos Atlânticos – Experiência de 1 Dia 🌿',
     subtitle: 'Região de Lisboa',
     description:
@@ -88,11 +40,35 @@ const TRUST_ITEMS = [
 
 const PromoPopup = () => {
   const [open, setOpen] = useState(false);
+  const [headerOffset, setHeaderOffset] = useState(96);
   const navigate = useNavigate();
 
   useEffect(() => {
     const timer = setTimeout(() => setOpen(true), 1500);
     return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const updateHeaderOffset = () => {
+      const headerEl = document.querySelector('header');
+      if (!headerEl) {
+        setHeaderOffset(96);
+        return;
+      }
+
+      const { bottom } = headerEl.getBoundingClientRect();
+      // Keep a small breathing room below the fixed header.
+      setHeaderOffset(Math.max(80, Math.ceil(bottom) + 8));
+    };
+
+    updateHeaderOffset();
+    window.addEventListener('resize', updateHeaderOffset);
+    window.addEventListener('orientationchange', updateHeaderOffset);
+
+    return () => {
+      window.removeEventListener('resize', updateHeaderOffset);
+      window.removeEventListener('orientationchange', updateHeaderOffset);
+    };
   }, []);
 
   const dismiss = () => {
@@ -117,11 +93,13 @@ const PromoPopup = () => {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 md:p-5 bg-black/65 backdrop-blur-sm"
+      className="fixed left-0 right-0 bottom-0 z-50 flex items-start justify-center p-3 pb-5 md:p-5 md:pb-8 bg-black/65 backdrop-blur-sm"
+      style={{ top: `${headerOffset}px` }}
       onClick={dismiss}
     >
       <div
-        className="bg-white rounded-2xl shadow-2xl w-full max-w-5xl max-h-[95vh] flex flex-col overflow-hidden"
+        className="bg-white rounded-2xl shadow-2xl w-full max-w-xl flex flex-col overflow-hidden"
+        style={{ maxHeight: `calc(100dvh - ${headerOffset + 28}px)` }}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header com botão fechar — fora do scroll, nunca coberto no iOS */}
@@ -145,7 +123,7 @@ const PromoPopup = () => {
         <div className="overflow-y-auto overscroll-contain flex-1">
 
           {/* Cards */}
-          <div className="p-4 md:p-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="p-4 md:p-6 grid grid-cols-1 gap-4">
             {PROMO_CARDS.map((card) => (
               <div
                 key={card.id}
