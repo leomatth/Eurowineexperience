@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Send, MessageCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, MessageCircle, CheckCircle2 } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
@@ -16,6 +16,7 @@ const ContactSection = () => {
   const t = translations[language];
   const { toast } = useToast();
   const apiBaseUrl = process.env.REACT_APP_API_BASE_URL || '';
+  const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -57,10 +58,7 @@ const ContactSection = () => {
 
       const data = await response.json();
       if (data.success) {
-        toast({
-          title: "Mensagem enviada com sucesso!",
-          description: "Entraremos em contato em breve. Verifique seu email.",
-        });
+        setSubmitted(true);
         setFormData({ name: '', email: '', phone: '', package: '', message: '' });
       } else {
         throw new Error('Falha no envio');
@@ -103,6 +101,23 @@ const ContactSection = () => {
                 <CardDescription>Preencha o formulário e retornaremos em até 24h</CardDescription>
               </CardHeader>
               <CardContent>
+                {submitted ? (
+                  <div className="flex flex-col items-center justify-center py-12 text-center space-y-5">
+                    <div className="bg-green-100 p-5 rounded-full">
+                      <CheckCircle2 className="h-14 w-14 text-green-600" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900">Mensagem recebida!</h3>
+                    <p className="text-gray-600 max-w-xs">
+                      Obrigado pelo contacto. Em breve a nossa equipa entrará em contacto consigo.
+                    </p>
+                    <button
+                      onClick={() => setSubmitted(false)}
+                      className="mt-2 text-sm text-red-700 underline underline-offset-2 hover:text-red-900"
+                    >
+                      Enviar outra mensagem
+                    </button>
+                  </div>
+                ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <Label htmlFor="name">{t.contact.name}</Label>
@@ -189,6 +204,7 @@ const ContactSection = () => {
                     )}
                   </Button>
                 </form>
+                )}
               </CardContent>
             </Card>
 
