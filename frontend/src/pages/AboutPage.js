@@ -205,7 +205,7 @@ const AboutPage = () => {
             <h3 className="text-center text-gray-900 font-semibold mb-6">Acompanhe-nos nas Redes Sociais</h3>
             <div className="flex justify-center gap-6">
               <a
-                href="https://www.instagram.com/europawineexperience/"
+                href="https://www.instagram.com/eurowineexperience"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"

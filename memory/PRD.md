@@ -29,7 +29,7 @@ Viajantes premium, casais, apreciadores de vinho — orçamento alto (€850+/pe
 
 ## Contatos / Empresa
 - WhatsApp: +5521998277135
-- Email: europawineexperience@gmail.com
+- Email: geral@eurowinexp.com
 - Instagram: @europawineexperience
 
 ---

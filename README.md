@@ -18,6 +18,23 @@
 - 🏨 **Seção de Acomodações**: Recomendações de hotéis e pousadas
 - ❓ **FAQ Interativo**: Seção de perguntas frequentes
 
+### 📧 Configuração do Formulário de Contato (Resend)
+
+O formulário do site envia dados para `POST /api/contact`, que dispara e-mail via API da Resend.
+
+Defina estas variáveis de ambiente na Vercel (Project Settings > Environment Variables):
+
+- `RESEND_API_KEY`: chave da Resend
+- `RESEND_FROM_EMAIL`: remetente (ex.: `onboarding@resend.dev` para testes)
+- `CONTACT_TO_EMAIL`: caixa que receberá os leads (ex.: `geral@eurowinexp.com`)
+- `CORS_ORIGINS`: domínios permitidos, separados por vírgula
+
+Para desenvolvimento local do frontend (`frontend`), opcionalmente defina:
+
+- `REACT_APP_API_BASE_URL=http://localhost:8000`
+
+Sem `RESEND_API_KEY`, o endpoint retorna erro de configuração e o e-mail não é enviado.
+
 ---
 
 ##  🍷 Passeios & Experiências
@@ -340,7 +357,7 @@ O projeto é totalmente responsivo e otimizado para:
 
 ## 👥 Contato
 
-- **Email**: europawineexperience@gmail.com
+- **Email**: geral@eurowinexp.com
 - **WhatsApp**: +55 21 99827-7135
 - **Localização**: Lisboa, Portugal
 

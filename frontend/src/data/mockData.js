@@ -1137,12 +1137,12 @@ export const companyInfo = {
   name: "EuroWineExperience",
   tagline: "Enoturismo Premium em Portugal",
   phone: "+55 21 99827-7135",
-  email: "europawineexperience@gmail.com",
+  email: "geral@eurowinexp.com",
   whatsapp: "+5521998277135",
   socialMedia: {
-    instagram: "https://www.instagram.com/europawineexperience/",
+    instagram: "https://www.instagram.com/eurowineexperience",
     linktree: "https://linktr.ee/eurowineexperience",
-    facebook: "https://facebook.com/eurowineexperience",
+    facebook: "https://www.facebook.com/people/Eurowine-Experience/61589128540737",
     youtube: "https://youtube.com/@eurowineexperience"
   },
   partnerships: [

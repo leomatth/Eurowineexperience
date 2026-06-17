@@ -15,6 +15,7 @@ const ContactSection = () => {
   const { language } = useLanguage();
   const t = translations[language];
   const { toast } = useToast();
+  const apiBaseUrl = process.env.REACT_APP_API_BASE_URL || '';
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -38,13 +39,10 @@ const ContactSection = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
+      const response = await fetch(`${apiBaseUrl}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          access_key: 'c17637b0-5784-45aa-b946-6f78b24cef65',
-          subject: `Nova mensagem - ${formData.package || 'Contato Geral'}`,
-          from_name: formData.name,
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
@@ -52,6 +50,11 @@ const ContactSection = () => {
           message: formData.message,
         }),
       });
+
+      if (!response.ok) {
+        throw new Error('Falha no envio');
+      }
+
       const data = await response.json();
       if (data.success) {
         toast({
