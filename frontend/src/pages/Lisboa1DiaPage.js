@@ -8,9 +8,11 @@ import {
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
 import { companyInfo } from '../data/mockData';
+import { trackWhatsAppClick } from '../lib/analytics';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 const WHATSAPP_URL = `https://wa.me/${companyInfo.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent('Olá! Gostaria de saber mais sobre a experiência de 1 dia de vinhos atlânticos em Lisboa.')}`;
+const trackWA = () => trackWhatsAppClick('lisboa_1_dia');
 
 const HERO_IMG   = 'https://images.unsplash.com/photo-1718337581366-fc10681e2c00?auto=format&fit=crop&w=1600&q=80';
 const BARREL_IMG = 'https://images.unsplash.com/photo-1660903028319-238d7395f81d?auto=format&fit=crop&w=1200&q=75';
@@ -204,6 +206,7 @@ const Lisboa1DiaPage = () => {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={trackWA}
               data-testid="hero-whatsapp-cta"
             >
               <Button
@@ -309,7 +312,7 @@ const Lisboa1DiaPage = () => {
 
                 {/* CTA */}
                 <div className="px-6 pb-6">
-                  <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" data-testid={`day-${stop.day}-cta`}>
+                  <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" onClick={trackWA} data-testid={`day-${stop.day}-cta`}>
                     <Button size="sm" className="w-full bg-red-700 hover:bg-red-800 text-white font-semibold transition-all duration-300">
                       <MessageCircle className="mr-2 h-4 w-4" />
                       Reservar Esta Experiência
@@ -499,6 +502,7 @@ const Lisboa1DiaPage = () => {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={trackWA}
                 data-testid="faq-whatsapp-cta"
               >
                 <Button className="bg-white text-red-700 hover:bg-gray-100 font-semibold px-8 py-5 shadow-lg transition-all duration-300 hover:scale-105">
@@ -533,6 +537,7 @@ const Lisboa1DiaPage = () => {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={trackWA}
               data-testid="final-whatsapp-cta"
             >
               <Button

@@ -47,6 +47,9 @@ yarn-error.log*
 # Cache
 .cache/
 
+# Agent prompts (internal — not for public repo)
+agents/
+
 # Temporary files
 *.tmp
 temp/

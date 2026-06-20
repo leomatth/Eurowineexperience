@@ -8,6 +8,7 @@ import { translations } from '../data/translations';
 import { packages, accommodations, companyInfo } from '../data/mockData';
 import { useNavigate } from 'react-router-dom';
 import { optimizeImageUrl } from '../lib/utils';
+import { trackWhatsAppClick } from '../lib/analytics';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
 import TestimonialsSection from '../components/TestimonialsSection';
@@ -90,6 +91,7 @@ const HomePage = () => {
   };
 
   const handleAccommodationBooking = (accommodation) => {
+    trackWhatsAppClick('home_hospedagem', accommodation.name);
     const message = encodeURIComponent(
       `Olá! Tenho interesse em reservar o *${accommodation.name}* (${accommodation.stars}⭐), localizado em ${accommodation.location}.\n` +
       `Preço a partir de: ${accommodation.currency}${accommodation.pricePerNight}/noite\n\n` +

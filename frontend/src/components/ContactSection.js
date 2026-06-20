@@ -8,6 +8,7 @@ import { Label } from './ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { useToast } from '../hooks/use-toast';
 import { useLanguage } from '../contexts/LanguageContext';
+import { trackWhatsAppClick } from '../lib/analytics';
 import { translations } from '../data/translations';
 import { companyInfo, packages } from '../data/mockData';
 
@@ -75,6 +76,7 @@ const ContactSection = () => {
   };
 
   const openWhatsApp = () => {
+    trackWhatsAppClick('contact_section');
     const message = encodeURIComponent('Olá! Gostaria de saber mais sobre os pacotes de enoturismo em Portugal. Podem me ajudar?');
     window.open(`https://wa.me/${companyInfo.whatsapp.replace(/\D/g, '')}?text=${message}`, '_blank', 'noopener,noreferrer');
   };

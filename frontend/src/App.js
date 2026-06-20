@@ -2,6 +2,7 @@ import "@/App.css";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { Toaster } from "@/components/ui/sonner";
 import { Analytics } from "@vercel/analytics/react";
+import { trackPageView } from "@/lib/analytics";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Header from "@/components/Header";
@@ -19,6 +20,8 @@ function ScrollManager() {
   const location = useLocation();
 
   useEffect(() => {
+    trackPageView(location.pathname + location.search, document.title);
+
     if (location.state?.scrollTo) {
       setTimeout(() => {
         const el = document.getElementById(location.state.scrollTo);

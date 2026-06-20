@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { X, Check } from 'lucide-react';
 import { Button } from './ui/button';
 import { companyInfo } from '../data/mockData';
+import { trackWhatsAppClick } from '../lib/analytics';
 
 const PROMO_CARDS = [
   {
@@ -80,6 +81,7 @@ const PromoPopup = () => {
     if (card.type === 'navigate') {
       navigate(card.destination);
     } else {
+      trackWhatsAppClick('promo_popup', card.badge);
       const waNumber = companyInfo.whatsapp.replace(/\D/g, '');
       window.open(
         `https://wa.me/${waNumber}?text=${encodeURIComponent(card.waMessage)}`,

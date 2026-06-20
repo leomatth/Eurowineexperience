@@ -8,6 +8,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../data/translations';
 import { packages, companyInfo } from '../data/mockData';
+import { trackWhatsAppClick } from '../lib/analytics';
 import { optimizeImageUrl } from '../lib/utils';
 
 const ExperienciasPage = () => {
@@ -64,6 +65,7 @@ const ExperienciasPage = () => {
   };
 
   const openWhatsApp = (pkg) => {
+    trackWhatsAppClick('experiencias_page', pkg.name);
     const message = encodeURIComponent(
       `Olá! Tenho interesse em reservar a experiência *${pkg.name}* em ${pkg.location}.\n` +
       `Duração: ${pkg.duration} | Grupo: ${pkg.groupSize}\n` +

@@ -8,6 +8,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../data/translations';
 import { accommodations, companyInfo } from '../data/mockData';
 import { optimizeImageUrl } from '../lib/utils';
+import { trackWhatsAppClick } from '../lib/analytics';
 
 const HospedagemPage = () => {
   const { language } = useLanguage();
@@ -33,6 +34,7 @@ const HospedagemPage = () => {
     ));
 
   const openWhatsApp = (hotel) => {
+    trackWhatsAppClick('hospedagem_page', hotel.name);
     const message = encodeURIComponent(
       `Olá! Tenho interesse em reservar o *${hotel.name}* (${hotel.stars}⭐), localizado em ${hotel.location}.\n` +
       `Preço a partir de: ${hotel.currency}${hotel.pricePerNight}/noite\n\n` +

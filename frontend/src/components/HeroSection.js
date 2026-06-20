@@ -4,6 +4,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../data/translations';
 import { heroImages, companyInfo } from '../data/mockData';
 import { optimizeImageUrl } from '../lib/utils';
+import { trackWhatsAppClick } from '../lib/analytics';
 
 const HeroSection = () => {
   const { language } = useLanguage();
@@ -17,6 +18,7 @@ const HeroSection = () => {
   };
 
   const openWhatsApp = () => {
+    trackWhatsAppClick('hero_section');
     const message = encodeURIComponent('Olá! Gostaria de saber mais sobre as experiências de enoturismo em Portugal. Podem me ajudar?');
     window.open(`https://wa.me/${companyInfo.whatsapp.replace(/\D/g, '')}?text=${message}`, '_blank', 'noopener,noreferrer');
   };
