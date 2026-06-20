@@ -1136,9 +1136,9 @@ export const testimonials = [
 export const companyInfo = {
   name: "EuroWineExperience",
   tagline: "Enoturismo Premium em Portugal",
-  phone: "+351 935 327 289",
+  phone: "+351 937 700 520",
   email: "geral@eurowinexp.com",
-  whatsapp: "+351935327289",
+  whatsapp: "+351937700520",
   socialMedia: {
     instagram: "https://www.instagram.com/eurowineexperience",
     linktree: "https://linktr.ee/eurowineexperience",
@@ -1169,7 +1169,7 @@ export const faqs = [
   {
     id: 3,
     question: "Posso personalizar meu pacote?",
-    answer: "Sim! Entre em contato via WhatsApp (+351 935 327 289) e nossos especialistas criarão uma experiência personalizada para suas preferências, incluindo vinícolas específicas e roteiros exclusivos."
+    answer: "Sim! Entre em contato via WhatsApp (+351 937 700 520) e nossos especialistas criarão uma experiência personalizada para suas preferências, incluindo vinícolas específicas e roteiros exclusivos."
   },
   {
     id: 4,
